@@ -1,4 +1,0 @@
-html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #fff; }
-canvas { display: block; width: 100%; height: 100%; }
-canvas[hidden] { display: none; }
-.purpose-status { position: fixed; inset: 45% 20px auto; color: #514b43; text-align: center; font: 14px/1.6 sans-serif; }

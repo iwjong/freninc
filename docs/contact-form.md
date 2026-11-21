@@ -37,7 +37,6 @@ Provider references: [Resend API schema](https://github.com/resend/resend-openap
 
 ## Verification and limits
 
-- `npm test`: validation, request boundaries, local persistence, retries, production configuration, browser-facing Host checks, mocked provider requests/failure and throttling.
 - `npm run build`: production compilation.
 - Browser checks: four local submission types, conditional fields, required fields, duplicate clicks, failure preservation, responsive layouts. Synthetic local records are marked with a browser verification message.
 - Live mailbox delivery is not tested; no credentials were available. Safari and physical mobile devices were not tested.
