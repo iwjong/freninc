@@ -1,0 +1,146 @@
+﻿[
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "project",
+        "width":  320
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "consulting",
+        "width":  320
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "collaboration",
+        "width":  320
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "general",
+        "width":  320
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "project",
+        "width":  390
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "consulting",
+        "width":  390
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "collaboration",
+        "width":  390
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "general",
+        "width":  390
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "project",
+        "width":  768
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "consulting",
+        "width":  768
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "collaboration",
+        "width":  768
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "general",
+        "width":  768
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "project",
+        "width":  1024
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "consulting",
+        "width":  1024
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "collaboration",
+        "width":  1024
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "general",
+        "width":  1024
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "project",
+        "width":  1440
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "consulting",
+        "width":  1440
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "collaboration",
+        "width":  1440
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "general",
+        "width":  1440
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "project",
+        "width":  1920
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "consulting",
+        "width":  1920
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "collaboration",
+        "width":  1920
+    },
+    {
+        "fieldsClipped":  false,
+        "overflow":  false,
+        "type":  "general",
+        "width":  1920
+    }
+]

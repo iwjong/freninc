@@ -1,0 +1,59 @@
+/* Home follows About's section, card and body type scale. */
+.home-page { font-size: var(--fren-body); }
+.home-page :is(h1, h2, h3, .caption) {
+  min-width: 0;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+.home-page :is(.home-statement, h2) {
+  font-size: var(--fren-heading);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+.home-page .home-statement { font-size: clamp(40px, 4.5vw, 64px); }
+.home-page :is(h3, .carousel-block .caption) {
+  font-size: var(--fren-title);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.home-page :is(.copy-lead, .category-list-desc, .purpose-copy p) {
+  font-size: var(--fren-body);
+  line-height: 1.55;
+  letter-spacing: normal;
+  text-wrap: pretty;
+  color: #a6a6a6;
+}
+.home-page :is(.category-list-desc, .purpose-copy p) {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 45ch;
+  width: auto;
+}
+.home-page .text-container .copy-lead { max-width: 60ch; margin-inline: auto; }
+.home-page .block-title { margin-bottom: 32px; }
+.home-page .block-title > .flex { flex-wrap: wrap; gap: 24px; align-items: center; }
+.home-page .block-title .copy-lead { max-width: 60ch; margin-top: 24px; }
+.home-page .purpose-copy { margin-top: 20px; }
+.home-page .purpose-copy h3 { width: auto; margin-bottom: 12px; }
+.home-page .project-name { width: auto; margin-top: 20px; margin-bottom: 0; }
+.home-page .featured-projects-block img { object-fit: cover; object-position: center; }
+.home-page .featured-projects-block a[href="/projects#uva-therapeutic-playroom"] img { object-position: center 65%; }
+.home-page .subscribe-block h2 { width: auto; max-width: 24ch; margin-bottom: 32px; }
+.home-page :is(.cta-small, .cta-large) {
+  font-size: clamp(14px, .9375vw, 18px);
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+.home-page .newsletter :is(input, .placeholder) { font-size: 16px; line-height: 1.4; letter-spacing: normal; }
+.purpose-filter-defs { position: absolute; pointer-events: none; }
+.home-page .purpose-block .thumbnail {
+  background: #181818;
+  isolation: isolate;
+  overflow: hidden;
+}
+.home-page .purpose-gif {
+  filter: grayscale(1) invert(1) contrast(1.2) url("#purpose-dither");
+  mix-blend-mode: screen;
+  opacity: .82;
+}

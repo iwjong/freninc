@@ -1,0 +1,31 @@
+{
+  "route": "/about",
+  "authority": [
+    "app/globals.css:431 (.container)",
+    "app/globals.css:71 (.radius)",
+    "content/projects.ts",
+    "lib/render-projects.js"
+  ],
+  "preserve": [
+    "Untitled Sans regular",
+    "dark background",
+    "exact .container gutters and .radius",
+    "pill CTA",
+    "header/footer and all destinations",
+    "existing company and team facts"
+  ],
+  "introduce": [
+    "scoped role scale",
+    "real project imagery",
+    "native details for optional descriptions",
+    "team gallery reusing Swiper"
+  ],
+  "files": [
+    "content/about.html",
+    "app/about/about.css",
+    "app/about/page.jsx",
+    "components/site-page.jsx",
+    "app/globals.css"
+  ],
+  "delete": []
+}

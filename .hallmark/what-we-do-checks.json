@@ -1,0 +1,47 @@
+﻿[
+    {
+        "status":  "success",
+        "width":  320,
+        "images":  1,
+        "cards":  4,
+        "navigation":  "passed",
+        "lastCard":  "fully visible",
+        "text":  "fits"
+    },
+    {
+        "status":  "success",
+        "width":  390,
+        "images":  1,
+        "cards":  4,
+        "navigation":  "passed",
+        "lastCard":  "fully visible",
+        "text":  "fits"
+    },
+    {
+        "status":  "success",
+        "width":  768,
+        "images":  1,
+        "cards":  4,
+        "navigation":  "passed",
+        "lastCard":  "fully visible",
+        "text":  "fits"
+    },
+    {
+        "status":  "success",
+        "width":  1440,
+        "images":  1,
+        "cards":  4,
+        "navigation":  "passed",
+        "lastCard":  "fully visible",
+        "text":  "fits"
+    },
+    {
+        "status":  "success",
+        "width":  1920,
+        "images":  1,
+        "cards":  4,
+        "navigation":  "passed",
+        "lastCard":  "fully visible",
+        "text":  "fits"
+    }
+]

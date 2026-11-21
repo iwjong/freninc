@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+*.log
+__pycache__/
+
+.env*
+!.env.example
+.data/

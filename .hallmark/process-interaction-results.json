@@ -1,0 +1,57 @@
+﻿[
+    {
+        "id":  "bb9ce7a7-f9ff-4c9a-bec8-e33ddbb2fd97",
+        "ok":  true,
+        "result":  {
+                       "result":  "{\"pointer\":\"fine\",\"status\":\"passed\",\"width\":320}",
+                       "origin":  "http://127.0.0.1:3000/about"
+                   },
+        "_meta":  {
+                      "runtimeId":  "0fd5d7f9-3022-43be-be67-28de4b65002c"
+                  }
+    },
+    {
+        "id":  "db2273fa-9af3-46e8-96ae-952b47d33738",
+        "ok":  true,
+        "result":  {
+                       "result":  "{\"pointer\":\"fine\",\"status\":\"passed\",\"width\":390}",
+                       "origin":  "http://127.0.0.1:3000/about"
+                   },
+        "_meta":  {
+                      "runtimeId":  "0fd5d7f9-3022-43be-be67-28de4b65002c"
+                  }
+    },
+    {
+        "id":  "bc8384f8-a048-4b94-b68b-fbfe4d85db85",
+        "ok":  true,
+        "result":  {
+                       "result":  "{\"pointer\":\"fine\",\"status\":\"passed\",\"width\":768}",
+                       "origin":  "http://127.0.0.1:3000/about"
+                   },
+        "_meta":  {
+                      "runtimeId":  "0fd5d7f9-3022-43be-be67-28de4b65002c"
+                  }
+    },
+    {
+        "id":  "a8bea88b-7733-45ae-b672-fdc9551aba4a",
+        "ok":  true,
+        "result":  {
+                       "result":  "{\"pointer\":\"fine\",\"status\":\"passed\",\"width\":1440}",
+                       "origin":  "http://127.0.0.1:3000/about"
+                   },
+        "_meta":  {
+                      "runtimeId":  "0fd5d7f9-3022-43be-be67-28de4b65002c"
+                  }
+    },
+    {
+        "id":  "5b25a65a-ab49-410d-b59a-3141d8e989b8",
+        "ok":  true,
+        "result":  {
+                       "result":  "{\"pointer\":\"fine\",\"status\":\"passed\",\"width\":1920}",
+                       "origin":  "http://127.0.0.1:3000/about"
+                   },
+        "_meta":  {
+                      "runtimeId":  "0fd5d7f9-3022-43be-be67-28de4b65002c"
+                  }
+    }
+]

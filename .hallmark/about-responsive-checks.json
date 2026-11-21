@@ -1,0 +1,92 @@
+﻿[
+    {
+        "status":  "success",
+        "width":  320,
+        "gutter":  "13.1282px",
+        "hero":  "44px",
+        "section":  "32px",
+        "body":  "16px",
+        "columns":  "278.417px"
+    },
+    {
+        "status":  "success",
+        "width":  390,
+        "gutter":  "16px",
+        "hero":  "44px",
+        "section":  "32px",
+        "body":  "16px",
+        "columns":  "342.688px"
+    },
+    {
+        "status":  "success",
+        "width":  639,
+        "gutter":  "26.229px",
+        "hero":  "44px",
+        "section":  "32px",
+        "body":  "16px",
+        "columns":  "273.781px 273.781px"
+    },
+    {
+        "status":  "success",
+        "width":  640,
+        "gutter":  "13.7635px",
+        "hero":  "44px",
+        "section":  "32px",
+        "body":  "16px",
+        "columns":  "286.573px 286.573px"
+    },
+    {
+        "status":  "success",
+        "width":  768,
+        "gutter":  "16.5161px",
+        "hero":  "46.08px",
+        "section":  "32px",
+        "body":  "16px",
+        "columns":  "347.823px 347.823px"
+    },
+    {
+        "status":  "success",
+        "width":  1024,
+        "gutter":  "22.0215px",
+        "hero":  "53.76px",
+        "section":  "34.304px",
+        "body":  "16px",
+        "columns":  "470.312px 470.312px"
+    },
+    {
+        "status":  "success",
+        "width":  1279,
+        "gutter":  "27.5126px",
+        "hero":  "67.165px",
+        "section":  "42.8577px",
+        "body":  "16px",
+        "columns":  "592.49px 592.49px"
+    },
+    {
+        "status":  "success",
+        "width":  1280,
+        "gutter":  "18.6666px",
+        "hero":  "67.2px",
+        "section":  "42.88px",
+        "body":  "16px",
+        "columns":  "601.677px 601.677px"
+    },
+    {
+        "status":  "success",
+        "width":  1440,
+        "gutter":  "21px",
+        "hero":  "75.6px",
+        "section":  "48px",
+        "body":  "17.28px",
+        "columns":  "679.344px 679.344px"
+    },
+    {
+        "status":  "success",
+        "width":  1920,
+        "gutter":  "27.9999px",
+        "hero":  "80px",
+        "section":  "48px",
+        "body":  "18px",
+        "columns":  "912.344px 912.344px"
+    }
+]

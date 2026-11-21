@@ -1,0 +1,42 @@
+<header class="site-header sticky top-0 z-[100] w-full bg-black">
+  <div class="container relative z-10 flex items-center justify-between">
+    <div>
+      <a aria-label="Link to homepage" href="/">
+        <img alt="" class="logo" height="30" src="/assets/brand/logo.svg" width="95"/>
+      </a>
+    </div>
+    <div>
+      <button aria-controls="mobile-menu" aria-expanded="false" class="menu-button flex flex-col justify-between sm:hidden">
+        <span class="sr-only">Toggle menu</span>
+        <span class="line top bg-white"></span>
+        <span class="line middle bg-white"></span>
+        <span class="line bottom bg-white"></span>
+      </button>
+      <ul class="nav-links hidden w-fit items-center sm:flex">
+        <li>
+          <a class="site-link body transition-colors hover:text-grey-100" href="/about">About</a>
+        </li>
+        <li>
+          <a class="site-link body transition-colors hover:text-grey-100" href="/projects">Projects</a>
+        </li>
+        <li>
+          <a class="site-link body transition-colors hover:text-grey-100" href="https://frenfoundation.org">Foundation</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div aria-label="Main navigation" class="site-menu container fixed top-0 left-0 z-[-1] flex h-full w-full flex-col justify-between bg-black" hidden="" id="mobile-menu">
+    <ul class="menu-links">
+      <li>
+        <a  href="/about">About</a>
+      </li>
+      <li>
+        <a  href="/projects">Projects</a>
+      </li>
+      <li>
+        <a  href="https://frenfoundation.org">Foundation</a>
+      </li>
+    </ul>
+    <p class="body-small">© 2026 Layers Design Ltd.</p>
+  </div>
+</header>

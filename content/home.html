@@ -1,0 +1,324 @@
+<div class="home-page fill-remaining-screen">
+ <svg class="purpose-filter-defs" width="0" height="0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+   <filter id="purpose-dither" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="12" result="grain"/>
+    <feColorMatrix in="grain" type="saturate" values="0" result="mono-grain"/>
+    <feComposite in="SourceGraphic" in2="mono-grain" operator="arithmetic" k1=".75" k2=".625" k3="0" k4="0"/>
+    <feComponentTransfer>
+     <feFuncR type="discrete" tableValues="0 .0667 .1333 .2 .2667 .3333 .4 .4667 .5333 .6 .6667 .7333 .8 .8667 .9333 1"/>
+     <feFuncG type="discrete" tableValues="0 .0667 .1333 .2 .2667 .3333 .4 .4667 .5333 .6 .6667 .7333 .8 .8667 .9333 1"/>
+     <feFuncB type="discrete" tableValues="0 .0667 .1333 .2 .2667 .3333 .4 .4667 .5333 .6 .6667 .7333 .8 .8667 .9333 1"/>
+    </feComponentTransfer>
+   </filter>
+  </defs>
+ </svg>
+ <!-- Hero -->
+ <section class="carousel-block">
+  <div>
+   <div class="swiper container relative">
+    <ul class="swiper-wrapper">
+     <!-- home-hero -->
+    </ul>
+   </div>
+  </div>
+ </section>
+ <!-- Intro -->
+ <section class="text-block">
+  <div class="text-container">
+   <h1 class="home-statement">FREN designs spaces for care and play that are easier to enter and enjoy.</h1>
+  </div>
+ </section>
+ <!-- About, Projects, In Progress -->
+ <section class="category-list-block">
+  <ul class="category-list-wrapper container grid grid-cols-1 xl:grid-cols-3">
+   <li>
+    <div class="block-title">
+     <div class="flex items-center justify-between">
+      <div>
+       <h2 class="h1">
+        About
+       </h2>
+      </div>
+      <div class="link-or-button">
+      </div>
+     </div>
+    </div>
+    <a aria-label="View About" class="category-list-image radius relative block" href="/about">
+     <div class="category-list-image" style="overflow:hidden;position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;max-height:none">
+      <picture>
+       <img alt="" decoding="async" loading="lazy" src="/assets/home/about.jpg" style="position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;max-height:none"/>
+      </picture>
+     </div>
+    </a>
+    <p class="category-list-desc body-large">
+     Meet the people and approach behind FREN. We begin with the needs of the people who will use a space.
+    </p>
+    <a class="cta-small" href="/about">
+     View About
+    </a>
+   </li>
+   <li>
+    <div class="block-title">
+     <div class="flex items-center justify-between">
+      <div>
+       <h2 class="h1">
+        Projects
+       </h2>
+      </div>
+      <div class="link-or-button">
+      </div>
+     </div>
+    </div>
+    <a aria-label="View Projects" class="category-list-image radius relative block" href="/projects">
+     <div class="category-list-image" style="overflow:hidden;position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;max-height:none">
+      <picture>
+       <img alt="" decoding="async" loading="lazy" src="<!-- home-category-projects -->" style="position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;max-height:none"/>
+      </picture>
+     </div>
+    </a>
+    <p class="category-list-desc body-large">
+     Discover interactive exhibits, healthcare environments and wayfinding designed for children, families and communities.
+    </p>
+    <a class="cta-small" href="/projects">
+     View Projects
+    </a>
+   </li>
+   <li>
+    <div class="block-title">
+     <div class="flex items-center justify-between">
+      <div>
+       <h2 class="h1">
+        <a href="/projects#in-progress">In Progress</a>
+       </h2>
+      </div>
+      <div class="link-or-button">
+      </div>
+     </div>
+    </div>
+    <a aria-label="View In Progress" class="category-list-image radius relative block" href="/projects#in-progress">
+     <div class="category-list-image" style="overflow:hidden;position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;max-height:none">
+      <picture>
+       <img alt="" decoding="async" loading="lazy" src="<!-- home-category-progress -->" style="position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;max-height:none"/>
+      </picture>
+     </div>
+    </a>
+    <p class="category-list-desc body-large">
+     Explore new ideas through research and prototyping. Get in touch for updates on work in development.
+    </p>
+    <a class="cta-small" href="/projects#in-progress">
+     View In Progress
+    </a>
+   </li>
+  </ul>
+ </section>
+ <!-- Our Purpose -->
+ <section class="purpose-block container">
+  <div class="block-title">
+   <div class="flex items-center justify-between">
+    <div>
+     <h2 class="h1">
+      Our Purpose
+     </h2>
+    </div>
+   </div>
+   <p class="body copy-lead">
+    We design with a clear intention: to make everyday environments more welcoming, understandable and engaging.
+   </p>
+  </div>
+  <ul class="purpose-images hidden grid-cols-1 xl:grid xl:grid-cols-3">
+   <li>
+    <div>
+     <div class="image thumbnail radius block bg-grey-500">
+      <img class="purpose-gif" src="/assets/home/our-purpose/purpose-01.gif" alt="Start with people animation" width="640" height="640" loading="lazy" decoding="async" style="background-color: #f7f7f7;"/>
+     </div>
+    </div>
+    <div class="purpose-copy">
+     <h3 class="body-large">
+      Start with people
+     </h3>
+     <p class="body">
+      Listen to children, families and staff. Let their needs guide the experience.
+     </p>
+    </div>
+   </li>
+   <li>
+    <div>
+     <div class="image thumbnail radius block bg-grey-500">
+      <img class="purpose-gif" src="/assets/home/our-purpose/purpose-02.gif" alt="Connect space and story animation" width="640" height="640" loading="lazy" decoding="async" style="background-color: #f2f2f2;"/>
+     </div>
+    </div>
+    <div class="purpose-copy">
+     <h3 class="body-large">
+      Connect space and story
+     </h3>
+     <p class="body">
+      Bring physical details, original artwork and digital media into one coherent environment.
+     </p>
+    </div>
+   </li>
+   <li>
+    <div>
+     <div class="image thumbnail radius block bg-grey-500">
+      <img class="purpose-gif" src="/assets/home/our-purpose/purpose-03.gif" alt="Invite exploration animation" width="640" height="640" loading="lazy" decoding="async" style="background-color: #f2f2f2;"/>
+     </div>
+    </div>
+    <div class="purpose-copy">
+     <h3 class="body-large">
+      Invite exploration
+     </h3>
+     <p class="body">
+      Create opportunities to move, notice, learn and play in different ways.
+     </p>
+    </div>
+   </li>
+  </ul>
+  <div class="swiper grid grid-cols-1 xl:hidden">
+   <ul class="swiper-wrapper">
+    <li class="swiper-slide">
+     <div>
+      <div class="image thumbnail radius block bg-grey-500">
+       <img class="purpose-gif" src="/assets/home/our-purpose/purpose-01.gif" alt="Start with people animation" width="640" height="640" loading="lazy" decoding="async" style="background-color: #f7f7f7;"/>
+      </div>
+     </div>
+     <div class="purpose-copy">
+      <h3 class="body-large">
+       Start with people
+      </h3>
+      <p class="body">
+       Listen to children, families and staff. Let their needs guide the experience.
+      </p>
+     </div>
+    </li>
+    <li class="swiper-slide">
+     <div>
+      <div class="image thumbnail radius block bg-grey-500">
+       <img class="purpose-gif" src="/assets/home/our-purpose/purpose-02.gif" alt="Connect space and story animation" width="640" height="640" loading="lazy" decoding="async" style="background-color: #f2f2f2;"/>
+      </div>
+     </div>
+     <div class="purpose-copy">
+      <h3 class="body-large">
+       Connect space and story
+      </h3>
+      <p class="body">
+       Bring physical details, original artwork and digital media into one coherent environment.
+      </p>
+     </div>
+    </li>
+    <li class="swiper-slide">
+     <div>
+      <div class="image thumbnail radius block bg-grey-500">
+       <img class="purpose-gif" src="/assets/home/our-purpose/purpose-03.gif" alt="Invite exploration animation" width="640" height="640" loading="lazy" decoding="async" style="background-color: #f2f2f2;"/>
+      </div>
+     </div>
+     <div class="purpose-copy">
+      <h3 class="body-large">
+       Invite exploration
+      </h3>
+      <p class="body">
+       Create opportunities to move, notice, learn and play in different ways.
+      </p>
+     </div>
+    </li>
+   </ul>
+  </div>
+  <div class="carousel-nav flex justify-between xl:hidden">
+   <button aria-label="Previous image" class="swiper-button-disabled">
+    <svg class="arrow" fill="none" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+     <rect fill="#A6A6A6" height="40" rx="20" transform="rotate(-90 0 40)" width="40" y="40">
+     </rect>
+     <path d="M28 20.926v-1.852H16.162l4.297-4.787L19.304 13 13 20.023 19.304 27l1.156-1.287-4.318-4.787z" fill="#0C0C0C">
+     </path>
+    </svg>
+   </button>
+   <button aria-label="Next image" >
+    <svg class="arrow rotate-180" fill="none" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+     <rect fill="#A6A6A6" height="40" rx="20" transform="rotate(-90 0 40)" width="40" y="40">
+     </rect>
+     <path d="M28 20.926v-1.852H16.162l4.297-4.787L19.304 13 13 20.023 19.304 27l1.156-1.287-4.318-4.787z" fill="#0C0C0C">
+     </path>
+    </svg>
+   </button>
+  </div>
+ </section>
+ <!-- Newsletter -->
+ <section class="subscribe-block container text-center">
+  <h2 class="body-large mx-auto">
+   Subscribe to our newsletter
+  </h2>
+  <div class="newsletter relative">
+   <form class="transition-opacity" novalidate="">
+    <div class="form-field relative w-full">
+     <label class="placeholder absolute top-0 left-0 h-full w-full cursor-pointer text-grey-200" for="subscribe-block-email">
+      <span>
+       Enter your email address
+      </span>
+     </label>
+     <input class="input block w-full border bg-grey-500 border-grey-500" id="subscribe-block-email" name="email" placeholder=" " required="" type="email"/>
+    </div>
+    <button class="cta-large filled-grey" type="submit">
+     Subscribe
+    </button>
+   </form>
+  </div>
+ </section>
+ <!-- Selected Projects -->
+ <section class="featured-projects-block container">
+  <div class="block-title">
+   <div class="flex items-center justify-between">
+    <div>
+     <h2 class="h1">
+      Selected Projects
+     </h2>
+    </div>
+    <div class="link-or-button">
+     <a class="cta-large" href="/projects">
+      View Projects
+     </a>
+    </div>
+   </div>
+  </div>
+  <ul class="site-grid grid">
+   <!-- home-selected -->
+  </ul>
+ </section>
+ <!-- Trusted by -->
+ <section class="logo-block container">
+  <div class="block-title">
+   <div class="flex items-center justify-between">
+    <div>
+     <h2 class="h1">
+      Who We Work With
+     </h2>
+    </div>
+    <div class="link-or-button">
+    </div>
+   </div>
+   <p class="body copy-lead">
+    Museums, healthcare teams and organizations creating places for children and families.
+   </p>
+  </div>
+  <ul class="site-grid grid">
+   <li class="col-span-3 aspect-square sm:col-span-2 xl:col-span-3">
+    <div class="logo-wrapper radius-20 flex h-full w-full items-center justify-center bg-grey-500">
+     <img class="client-logo" src="/assets/brand/partners/uva_health.jpg" alt="UVA Health" width="700" height="394" loading="lazy" decoding="async"/>
+    </div>
+   </li>
+   <li class="col-span-3 aspect-square sm:col-span-2 xl:col-span-3">
+    <div class="logo-wrapper radius-20 flex h-full w-full items-center justify-center bg-grey-500">
+     <img class="client-logo" src="/assets/brand/partners/memorial_health.jpg" alt="Memorial Health" width="700" height="394" loading="lazy" decoding="async"/>
+    </div>
+   </li>
+   <li class="col-span-3 aspect-square sm:col-span-2 xl:col-span-3">
+    <div class="logo-wrapper radius-20 flex h-full w-full items-center justify-center bg-grey-500">
+     <img class="client-logo" src="/assets/brand/partners/telfair_museums.jpg" alt="Telfair Museums" width="700" height="394" loading="lazy" decoding="async"/>
+    </div>
+   </li>
+   <li class="col-span-3 aspect-square sm:col-span-2 xl:col-span-3">
+    <div class="logo-wrapper radius-20 flex h-full w-full items-center justify-center bg-grey-500">
+     <img class="client-logo" src="/assets/brand/partners/ascension_sacred_heart.jpg" alt="Ascension Sacred Heart" width="700" height="394" loading="lazy" decoding="async"/>
+    </div>
+   </li>
+  </ul>
+ </section>
+</div>
