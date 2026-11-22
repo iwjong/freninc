@@ -3,12 +3,12 @@
 .projects-page :is(h1, h2, h3) {
   min-width: 0;
   margin: 0;
-  font-weight: 400;
+  font-weight: var(--weight-bold);
   overflow-wrap: break-word;
   text-wrap: balance;
 }
 .projects-page p { text-wrap: pretty; }
-.projects-page > section { padding-bottom: clamp(80px, 9vw, 160px); }
+.projects-page > section { padding-bottom: var(--fren-section-space); }
 .projects-page .projects-intro,
 .projects-page .projects-section-heading,
 .projects-page .projects-inquiry {
@@ -25,9 +25,9 @@
 }
 .projects-intro h1 {
   max-width: 18ch;
-  font-size: clamp(44px, 5.25vw, 80px);
-  line-height: 1.02;
-  letter-spacing: -.035em;
+  font-size: var(--fren-display);
+  line-height: 1.06;
+  letter-spacing: -.03em;
 }
 .projects-intro-copy { padding-bottom: 4px; }
 .projects-page .projects-intro-copy p { max-width: 38ch; }
@@ -38,7 +38,7 @@
   letter-spacing: normal;
   color: var(--color-text-secondary);
 }
-.projects-page .project-list { gap: clamp(80px, 9vw, 160px); }
+.projects-page .project-list { gap: var(--fren-section-space); }
 .projects-page .project-heading { gap: 24px; margin-bottom: 24px; align-items: start; }
 .projects-page .project-title { max-width: 52rem; }
 .projects-page .project-title :is(h2, h3) {
@@ -81,7 +81,7 @@
 .projects-page :is(.projects-section-heading, .projects-inquiry) h2 {
   max-width: 22ch;
   font-size: var(--fren-heading);
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -.025em;
 }
 .projects-page .projects-section-copy > p:first-child { margin-top: 0; }

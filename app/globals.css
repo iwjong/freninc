@@ -1,18 +1,21 @@
 @font-face{
   font-style:normal;
   font-family:Untitled Sans;
+  font-weight:400;
   font-display:swap;
   src:url("/assets/brand/fonts/untitled-sans-regular.woff2") format("woff2"),url("/assets/brand/fonts/untitled-sans-regular.woff") format("woff"),url("/assets/brand/fonts/untitled-sans-regular.otf") format("opentype")
 }
 @font-face{
   font-style:italic;
-  font-family:Untitled Sans Italic;
+  font-family:Untitled Sans;
+  font-weight:400;
   font-display:swap;
   src:url("/assets/brand/fonts/untitled-sans-regular-italic.woff2") format("woff2"),url("/assets/brand/fonts/untitled-sans-regular-italic.woff") format("woff"),url("/assets/brand/fonts/untitled-sans-regular-italic.otf") format("opentype")
 }
 @font-face{
-  font-style:bold;
-  font-family:Untitled Sans Bold;
+  font-style:normal;
+  font-family:Untitled Sans;
+  font-weight:700;
   font-display:swap;
   src:url("/assets/brand/fonts/untitled-sans-bold.woff2") format("woff2"),url("/assets/brand/fonts/untitled-sans-bold.woff") format("woff"),url("/assets/brand/fonts/untitled-sans-bold.otf") format("opentype")
 }
@@ -30,14 +33,20 @@
   --color-border: #808080;
   --color-divider: #3a3a3a;
   --color-error: #e0e0e0;
-  --fren-heading: clamp(32px, 3.35vw, 48px);
-  --fren-title: clamp(24px, 2.1vw, 32px);
+  --font-sans: "Untitled Sans", sans-serif;
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --fren-display: clamp(36px, 4.2vw, 60px);
+  --fren-statement: clamp(32px, 3.65vw, 52px);
+  --fren-heading: clamp(28px, 2.8vw, 40px);
+  --fren-title: clamp(22px, 1.95vw, 28px);
   --fren-body: clamp(16px, 1.2vw, 18px);
+  --fren-section-space: clamp(64px, 7.8vw, 112px);
 }
 html{
   font-size:16px;
   min-width:300px;
-  font-kerning:none;
+  font-kerning:normal;
   -webkit-text-size-adjust:100%;
   -moz-text-size-adjust:100%;
   text-size-adjust:100%;
@@ -129,7 +138,7 @@ section{
   transform:translateZ(0)
 }
 body{
-  font-family:Untitled Sans,sans-serif
+  font-family:var(--font-sans)
 }
 .body,body{
   font-size:clamp(14px,4.6153846154vw,18px)
@@ -2742,12 +2751,12 @@ label:has(.reference-radio:focus-visible) { outline: 2px solid #fff; outline-off
 
 .legal-page { max-width: 1200px; margin-inline: auto; padding-top: clamp(32px, 4vw, 64px); padding-bottom: 96px; }
 .legal-heading { margin-bottom: clamp(48px, 5vw, 72px); padding-bottom: 32px; border-bottom: 1px solid var(--color-divider); }
-.legal-heading h1 { font-size: clamp(40px, 4.5vw, 64px); font-weight: 400; line-height: 1.05; letter-spacing: -.03em; text-wrap: balance; }
+.legal-heading h1 { font-size: var(--fren-display); font-weight: var(--weight-bold); line-height: 1.05; letter-spacing: -.03em; text-wrap: balance; }
 .legal-intro { max-width: 60ch; margin-top: 24px; color: var(--color-text-secondary); font-size: 18px; line-height: 1.6; text-wrap: pretty; }
 .legal-date { margin-top: 24px; color: var(--color-text-secondary); font-size: 14px; line-height: 1.5; }
 .legal-layout { display: grid; gap: 48px; }
-.legal-nav { align-self: start; min-width: 0; font-size: 14px; line-height: 1.45; }
-.legal-nav > p { margin-bottom: 16px; color: var(--color-text-secondary); font-size: 12px; line-height: 1.5; letter-spacing: .04em; text-transform: uppercase; }
+.legal-nav { align-self: start; min-width: 0; font-size: 14px; font-weight: var(--weight-bold); line-height: 1.45; }
+.legal-nav > p { margin-bottom: 16px; color: var(--color-text-secondary); font-size: 14px; line-height: 1.5; letter-spacing: normal; text-transform: none; }
 .legal-nav ol { border-top: 1px solid var(--color-divider); }
 .legal-nav li:not(:last-child) { border-bottom: 1px solid var(--color-divider); }
 .legal-nav a { display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: baseline; gap: 12px; min-height: 48px; padding-block: 14px; color: var(--color-text); }
@@ -2760,7 +2769,7 @@ label:has(.reference-radio:focus-visible) { outline: 2px solid #fff; outline-off
 .legal-content { min-width: 0; max-width: 68ch; color: var(--color-text-secondary); font-size: 16px; line-height: 1.7; overflow-wrap: anywhere; }
 .legal-content section { padding: 0; margin-bottom: 56px; scroll-margin-top: 24px; }
 .legal-content section:last-child { margin-bottom: 0; }
-.legal-content h2 { margin-bottom: 20px; color: var(--color-text); font-size: 24px; font-weight: 400; line-height: 1.3; letter-spacing: -.015em; text-wrap: balance; }
+.legal-content h2 { margin-bottom: 20px; color: var(--color-text); font-size: 22px; font-weight: var(--weight-bold); line-height: 1.3; letter-spacing: -.015em; text-wrap: balance; }
 .legal-section-number { margin-right: 8px; color: var(--color-text-secondary); font-size: 14px; letter-spacing: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .legal-content p { text-wrap: pretty; }
 .legal-content p + p, .legal-content ul + p { margin-top: 16px; }
@@ -2821,3 +2830,12 @@ footer .newsletter .placeholder { color: var(--color-text-secondary); }
 footer .newsletter .cta-large { border-color: var(--color-text-secondary); }
 footer :focus-visible { outline-color: var(--color-text); }
 .cookie-bar a:hover { color: var(--color-ink); }
+
+/* Compact shared hierarchy; the page styles retain their existing compositions. */
+body { font-weight: var(--weight-regular); font-size: var(--fren-body); }
+.h1, .wysiwyg h1 { font-size: var(--fren-heading); font-weight: var(--weight-bold); line-height: 1.12; letter-spacing: -.025em; }
+.h2, .wysiwyg h2 { font-size: var(--fren-title); font-weight: var(--weight-bold); line-height: 1.18; letter-spacing: -.015em; }
+.site-header .nav-links { font-size: 16px; font-weight: var(--weight-bold); }
+.site-header .menu-links { font-size: clamp(32px, 5vw, 40px); font-weight: var(--weight-bold); line-height: 1.15; }
+footer .body { font-size: 16px; line-height: 1.5; }
+footer a[href="/about"], footer a[href="/projects"], footer a[href="/contact"] { font-weight: var(--weight-bold); }

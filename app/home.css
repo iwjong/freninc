@@ -1,17 +1,18 @@
 /* Home follows About's section, card and body type scale. */
 .home-page { font-size: var(--fren-body); }
+.home-page > section { padding-bottom: var(--fren-section-space); }
 .home-page :is(h1, h2, h3, .caption) {
   min-width: 0;
-  font-weight: 400;
+  font-weight: var(--weight-bold);
   overflow-wrap: break-word;
   text-wrap: balance;
 }
 .home-page :is(.home-statement, h2) {
   font-size: var(--fren-heading);
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -.025em;
 }
-.home-page .home-statement { font-size: clamp(40px, 4.5vw, 64px); }
+.home-page .home-statement { font-size: var(--fren-statement); }
 .home-page :is(h3, .carousel-block .caption) {
   font-size: var(--fren-title);
   line-height: 1.15;
