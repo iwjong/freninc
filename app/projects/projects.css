@@ -17,13 +17,20 @@
   gap: clamp(32px, 5vw, 80px);
   align-items: start;
 }
-.projects-page .projects-intro { padding-top: 36px; }
+.projects-page .projects-intro {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, .75fr);
+  align-items: end;
+  padding-top: 36px;
+  padding-bottom: clamp(64px, 7vw, 112px);
+}
 .projects-intro h1 {
+  max-width: 18ch;
   font-size: clamp(44px, 5.25vw, 80px);
   line-height: 1.02;
   letter-spacing: -.035em;
 }
-.projects-intro-copy { padding-top: 8px; }
+.projects-intro-copy { padding-bottom: 4px; }
+.projects-page .projects-intro-copy p { max-width: 38ch; }
 .projects-page :is(.projects-intro-copy, .projects-section-copy, .project-description) p {
   max-width: 60ch;
   font-size: var(--fren-body);
@@ -86,7 +93,7 @@
   .projects-page .projects-inquiry,
   .projects-page .project-details { grid-template-columns: minmax(0, 1fr); }
   .projects-page .projects-intro { padding-top: 24px; }
-  .projects-intro-copy { padding-top: 0; }
+  .projects-intro-copy { padding-bottom: 0; }
   .projects-page .project-heading { flex-direction: column; gap: 20px; }
   .projects-page .project-heading button { align-self: flex-start; }
 }

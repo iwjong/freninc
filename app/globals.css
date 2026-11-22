@@ -1220,7 +1220,7 @@ img,video{
 }
 .site-menu .menu-links .active{
   --tw-text-opacity:1;
-  color:var(--color-text-secondary);
+  color:var(--color-accent);
 }
 .site-header{
   padding-top:5.1282051282vw;
@@ -1266,7 +1266,7 @@ img,video{
 }
 .site-link.active{
   --tw-text-opacity:1;
-  color:var(--color-text-secondary);
+  color:var(--color-accent);
 }
 .menu-button{
   height:25.2px;
@@ -2781,7 +2781,7 @@ label:has(.reference-radio:focus-visible) { outline: 2px solid #fff; outline-off
 }
 .cookie-bar a:focus-visible, .cookie-bar button:focus-visible { outline-color: #0c0c0c; }
 
-/* Yellow is reserved for hover; default, selected and focus states are neutral. */
+/* Yellow marks hover and the current header page; other states stay neutral. */
 .cta-large.cta-primary, .cta-small.cta-primary {
   background: var(--color-text-secondary);
   border-color: var(--color-text-secondary);
@@ -2807,7 +2807,7 @@ label:has(.reference-radio:focus-visible) { outline: 2px solid #fff; outline-off
   outline-offset: 4px;
 }
 .about-page .about-brochure :focus-visible, .cookie-bar :focus-visible { outline-color: var(--color-ink); }
-.site-header a[href]:hover, .legal-nav a:hover { color: var(--color-accent); }
+.site-header :is(.nav-links, .menu-links) a:is(:hover, [aria-current="page"]), .legal-nav a:hover { color: var(--color-accent); }
 .form-field .input::placeholder { color: var(--color-text-secondary); }
 .form-field .input:-webkit-autofill { -webkit-text-fill-color: var(--color-text); }
 footer > .site-grid {
