@@ -1,3 +1,5 @@
+import { emailDraftUrl, studioEmail } from "../lib/inquiry";
+
 const prompts = {
   project: ["What are you planning?", "Tell us about the place, the people it serves and what you hope to make possible."],
   consulting: ["What would you like guidance on?", "Share the challenge, the decisions ahead and where an outside perspective could help."],
@@ -65,7 +67,7 @@ export function initContactForm(form, signal) {
     payload.services = data.getAll('services');
     const fieldsets = [...form.querySelectorAll('fieldset')].map(element => [element, element.disabled]);
     if (String(payload.fax || '').trim()) {
-      showStatus('Please email support@freninc.com to continue your inquiry.', 'error');
+      showStatus(`Please email ${studioEmail} to continue your inquiry.`, 'error');
       return;
     }
     const labels = { project: 'New project', consulting: 'Consulting', collaboration: 'Collaboration', general: 'Something else' };
@@ -81,12 +83,7 @@ export function initContactForm(form, signal) {
     if (payload.discipline) lines.push(`Discipline: ${payload.discipline}`);
     if (payload.website) lines.push(`Website: ${payload.website}`);
     lines.push('', 'Message:', payload.message, '', 'Privacy acknowledgement: accepted');
-    const compose = new URL('https://mail.google.com/mail/');
-    compose.searchParams.set('view', 'cm');
-    compose.searchParams.set('fs', '1');
-    compose.searchParams.set('to', 'support@freninc.com');
-    compose.searchParams.set('su', `FREN website / ${labels[payload.inquiryType] || 'Inquiry'}`);
-    compose.searchParams.set('body', lines.join('\n'));
+    const compose = emailDraftUrl(`FREN website / ${labels[payload.inquiryType] || 'Inquiry'}`, lines.join('\n'));
     pending = true;
     button.disabled = true;
     button.textContent = 'Opening…';
@@ -95,9 +92,9 @@ export function initContactForm(form, signal) {
     form.elements.consent.disabled = true;
     status.hidden = true;
     try {
-      const opened = window.open(compose.href, '_blank', 'noopener,noreferrer');
-      if (!opened) window.location.assign(compose.href);
-      if (!signal.aborted) showStatus('Gmail opened a message to support@freninc.com. Send that message to reach FREN. Your answers are still on this page.', 'success');
+      const opened = window.open(compose, '_blank', 'noopener,noreferrer');
+      if (!opened) window.location.assign(compose);
+      if (!signal.aborted) showStatus(`An email draft opened for ${studioEmail}. Send that message to reach FREN. Your answers are still on this page.`, 'success');
     } finally {
       pending = false;
       fieldsets.forEach(([element, disabled]) => { element.disabled = disabled; });

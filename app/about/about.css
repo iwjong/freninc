@@ -27,9 +27,9 @@
 .about-hero-copy .cta-link { margin-top: 32px; }
 .about-hero-media img { display: block; width: 100%; height: clamp(480px, 40vw, 640px); object-fit: cover; object-position: 50% 72%; }
 .about-hero-media figcaption { font-style: italic; display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; color: var(--about-muted); font-size: var(--fren-label); line-height: 1.4; }
-.about-page .about-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 32px; }
-.about-page .about-section-heading h2 { max-width: 20ch; font-size: var(--about-heading); line-height: var(--fren-heading-leading); letter-spacing: normal; }
-.about-page .about-section-heading > p { max-width: 40ch; line-height: 1.55; color: var(--about-muted); }
+.about-page .about-section-heading { margin-bottom: 32px; }
+.about-page .about-section-heading h2 { font-size: var(--about-heading); line-height: var(--fren-heading-leading); letter-spacing: normal; }
+.about-page .about-section-heading > p { max-width: 60ch; margin-top: 24px; line-height: 1.55; color: var(--about-muted); }
 .about-page .cta-link, .about-page button, .about-page summary { -webkit-tap-highlight-color: transparent; }
 .about-page .cta-link { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 .about-page :is(a, button, summary):focus-visible { outline: 2px solid var(--color-text); outline-offset: 5px; }
@@ -53,19 +53,18 @@
 .about-services-gallery .about-service-cover { width: 42%; position: relative; overflow: clip; background: var(--about-ground); }
 .about-service-cover figure { height: 100%; }
 .about-service-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75; }
-.about-service-cover figcaption { position: absolute; inset: auto 0 0; padding: 24px 32px; color: var(--color-ink); font-size: var(--fren-body); line-height: 1.5; }
+.about-service-cover figcaption { position: absolute; inset: auto 0 0; padding: 24px 32px; color: var(--color-text); font-size: var(--fren-body); line-height: 1.5; }
 .about-service-card { display: flex; flex-direction: column; min-width: 0; padding: clamp(24px, 2.5vw, 40px); background: var(--about-paper); color: var(--about-ground); }
 .about-service-card h3 { max-width: 16ch; font-size: var(--about-title); line-height: var(--fren-heading-leading); letter-spacing: normal; }
 .about-service-card .about-service-description { max-width: 45ch; margin-top: auto; padding-top: 72px; font-size: var(--fren-body); line-height: 1.5; color: var(--about-ground); }
 .about-service-card .about-tags { display: flex; flex-wrap: wrap; align-content: start; gap: 8px; margin-top: 24px; font-size: var(--fren-label); line-height: 1.25; }
 .about-page .about-tags li { border: 0; border-radius: 999px; padding: 8px 14px; background: var(--color-background); color: var(--about-paper); font-size: inherit; text-transform: none; }
 .about-page .swiper[data-navigation-direction] { cursor: none; }
-.about-page .about-values-panel { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.35fr); gap: clamp(48px, 6vw, 96px); align-items: start; }
-.about-values-panel > h2 { max-width: 17ch; font-size: var(--about-heading); letter-spacing: normal; line-height: var(--fren-heading-leading); }
-.about-page .about-values-grid { display: grid; grid-template-columns: minmax(0, 1fr); }
-.about-page .about-values-grid li { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 32px; padding: 28px 0; border-top: 1px solid var(--about-rule); }
-.about-page .about-values-grid li:first-child { padding-top: 0; border-top: 0; }
-.about-page .about-values-grid h3 { margin: 0; font-size: var(--about-title); letter-spacing: normal; line-height: var(--fren-heading-leading); }
+.about-page .about-values-panel { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.about-values-panel > h2 { font-size: var(--about-heading); letter-spacing: normal; line-height: var(--fren-heading-leading); }
+.about-page .about-values-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px var(--about-gap); }
+.about-page .about-values-grid li { min-width: 0; padding-top: 24px; border-top: 1px solid var(--about-rule); }
+.about-page .about-values-grid h3 { margin: 0 0 16px; font-size: var(--about-title); letter-spacing: normal; line-height: var(--fren-heading-leading); }
 .about-page .about-values-grid .about-value-label { margin: 0; color: var(--about-paper); font-size: var(--fren-body); line-height: 1.45; }
 .about-page .about-values-grid p { max-width: 48ch; margin-top: 12px; color: var(--about-muted); font-size: var(--fren-body); line-height: 1.6; }
 .about-process-gallery .swiper-slide { width: 38%; height: auto; min-height: 540px; }
@@ -75,26 +74,24 @@
 .about-process-overlay .about-number { font-size: var(--fren-title); font-weight: var(--weight-regular); line-height: 1; font-variant-numeric: tabular-nums; }
 .about-process-overlay h3 { max-width: 18ch; font-size: var(--about-title); line-height: var(--fren-heading-leading); letter-spacing: normal; }
 .about-process-overlay p { max-width: 35ch; margin-top: 16px; font-size: var(--fren-body); line-height: 1.5; }
-.about-brochure-panel { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: clamp(32px, 5vw, 80px); padding: clamp(24px, 4vw, 64px); background: var(--about-paper); color: var(--about-ground); }
+.about-brochure-panel { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; padding: clamp(24px, 4vw, 64px); background: var(--about-paper); color: var(--about-ground); }
 .about-brochure-panel > h2 { font-size: var(--about-heading); line-height: var(--fren-heading-leading); letter-spacing: normal; }
-.about-brochure-copy > p { max-width: 42ch; margin-top: 0; color: var(--about-paper-muted); line-height: 1.55; }
+.about-brochure-copy > p { max-width: 60ch; margin-top: 0; color: var(--about-paper-muted); line-height: 1.55; }
 .about-brochure .about-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 .about-brochure .cta-link { border: 1px solid var(--about-ground); color: var(--about-ground); }
 .about-brochure .filled-black { background: var(--about-ground); color: var(--about-paper); }
 .about-brochure .cta-link:hover { background: var(--about-paper-muted); border-color: var(--about-paper-muted); color: #fff; }
 @media (max-width: 1279px) {
   .about-team .swiper-slide { width: calc((100% - 48px) / 3); }
+  .about-page .about-values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 1023px) {
   .about-page .about-hero { gap: 32px; }
   .about-hero-copy h1 { font-size: var(--about-display); font-weight: var(--weight-light); }
   .about-hero-media img { height: 520px; }
   .about-team .swiper-slide { width: calc((100% - 36px) / 2.3); }
-  .about-page .about-values-panel { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-  .about-values-panel > h2 { max-width: 22ch; }
   .about-services-gallery .swiper-slide { width: 48%; }
   .about-process-gallery .swiper-slide { width: 58%; }
-  .about-brochure-panel { grid-template-columns: minmax(0, 1fr); }
   .about-services-gallery .about-service-cover { width: 58%; }
 }
 @media (max-width: 639px) {
@@ -105,12 +102,10 @@
   .about-hero-copy .cta-link { margin-top: 24px; }
   .about-hero-media img { height: auto; aspect-ratio: 4 / 3; object-position: 50% 80%; }
   .about-hero-media figcaption { flex-wrap: wrap; gap: 4px 16px; }
-  .about-page .about-section-heading { gap: 24px; align-items: start; flex-wrap: wrap; }
-  .about-page .about-section-heading > p { max-width: 38ch; }
   .about-team .swiper-slide { width: 84%; }
   .about-services-gallery .swiper-slide, .about-services-gallery .about-service-cover { width: 88%; min-height: 440px; }
   .about-service-cover figcaption { padding: 24px; }
-  .about-page .about-values-grid li { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-block: 24px; }
+  .about-page .about-values-grid { grid-template-columns: minmax(0, 1fr); }
   .about-page .about-values-grid h3 { font-size: var(--about-title); }
   .about-page .about-values-grid .about-value-label { font-size: var(--fren-body); }
   .about-process-gallery .swiper-slide { width: 88%; min-height: 480px; }

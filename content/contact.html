@@ -1,9 +1,9 @@
 <div class="contact-page container">
  <div class="contact-layout">
   <div class="contact-intro">
-   <h1>Let’s make something meaningful.</h1>
+   <h1>Let’s make something<br/>meaningful.</h1>
    <p>Have a space to rethink, a story to tell or an idea to explore? Start a conversation with FREN.</p>
-   <div class="contact-details"><div><h2>Email the studio</h2><a href="mailto:support@freninc.com">support@freninc.com</a></div><div><h2>Find us</h2><address>Richmond Hill, Georgia<br/>Working with people and places everywhere.</address></div></div>
+   <div class="contact-details"><div><h2>Email the studio</h2><a href="{{studio-email-url}}" target="_blank" rel="noopener noreferrer">{{studio-email}}<span class="sr-only"> (opens an email draft in a new tab)</span></a><p class="contact-email-hint">Opens an email draft for your project inquiry.</p></div><div><h2>Find us</h2><address>Richmond Hill, Georgia<br/>Working with people and places everywhere.</address></div></div>
   </div>
   <div class="contact-form-column">
    <h2>Start a conversation.</h2>
@@ -40,7 +40,7 @@
     <label class="inquiry-consent"><input name="consent" type="checkbox" required/><span>I have read the <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and agree that FREN may contact me about this inquiry. *</span></label><span class="inquiry-error" id="error-consent"></span>
     <div class="inquiry-submit"><button type="submit" class="cta-large cta-primary filled-white" disabled><!-- submit-label --></button></div>
     <div class="inquiry-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
-    <noscript><p>Please enable JavaScript to use this form, or email <a href="mailto:support@freninc.com">support@freninc.com</a>.</p></noscript>
+    <noscript><p>Please enable JavaScript to use this form, or <a href="{{studio-email-url}}" target="_blank" rel="noopener noreferrer">open an email draft</a>.</p></noscript>
    </form>
   </div>
  </div>

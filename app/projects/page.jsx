@@ -13,7 +13,7 @@ export default async function Page() {
   const page = await readPage("projects");
   const contact = inProgress.length
     ? ""
-    : `<p class="body copy-lead"><a class="cta-small" href="mailto:support@freninc.com">Ask about current work</a></p>`;
+    : `<p class="body copy-lead"><a class="cta-small" href="/contact">Ask about current work</a></p>`;
   const html = page
     .replace("<!-- project-list -->", renderProjects(projects))
     .replace("<!-- in-progress-list -->", renderProjects(inProgress, 3))

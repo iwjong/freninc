@@ -89,6 +89,16 @@
 .projects-page .projects-section-copy > p:first-child { margin-top: 0; }
 .projects-page .projects-section-copy > .cta-link { margin-top: 28px; }
 .projects-page .project-item { scroll-margin-top: 110px; }
+.projects-inquiry-intro > p { max-width: 38ch; margin-top: 24px; color: var(--color-text-secondary); line-height: 1.55; }
+.projects-inquiry-options { min-width: 0; }
+.projects-inquiry-options li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; padding-block: 28px; border-top: 1px solid var(--color-divider); }
+.projects-inquiry-options li:first-child { padding-top: 0; border-top: 0; }
+.projects-inquiry-options h3 { font-size: var(--fren-title); line-height: var(--fren-heading-leading); }
+.projects-inquiry-options p { max-width: 42ch; margin-top: 8px; font-size: var(--fren-label); line-height: 1.6; color: var(--color-text-secondary); }
+.projects-inquiry-options .cta-link { width: 12rem; max-width: 100%; }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .projects-page .projects-inquiry { grid-template-columns: minmax(0, 1fr); }
+}
 @media (max-width: 767px) {
   .projects-page .projects-intro,
   .projects-page .projects-section-heading,
@@ -98,4 +108,8 @@
   .projects-intro-copy { padding-bottom: 0; }
   .projects-page .project-heading { flex-direction: column; gap: 20px; }
   .projects-page .project-heading button { align-self: flex-start; }
+}
+@media (max-width: 639px) {
+  .projects-inquiry-options li { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .projects-inquiry-options .cta-link { width: 100%; }
 }
