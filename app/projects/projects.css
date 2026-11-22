@@ -10,7 +10,6 @@
 .projects-page p { text-wrap: pretty; }
 .projects-page > section { padding-bottom: var(--fren-section-space); }
 .projects-page .projects-intro,
-.projects-page .projects-section-heading,
 .projects-page .projects-inquiry {
   display: grid;
   grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
@@ -24,13 +23,14 @@
   padding-bottom: clamp(64px, 7vw, 112px);
 }
 .projects-intro h1 {
-  max-width: 18ch;
+  max-width: 28ch;
   font-size: var(--fren-display);
   font-weight: var(--weight-light);
   line-height: var(--fren-heading-leading);
   letter-spacing: normal;
 }
 .projects-intro-copy { padding-bottom: 4px; }
+.projects-intro-heading { min-width: 0; }
 .projects-page .projects-intro-copy p { max-width: 38ch; }
 .projects-page :is(.projects-intro-copy, .projects-section-copy, .project-description) p {
   max-width: 60ch;
@@ -79,7 +79,7 @@
 .projects-page .fact-row span { overflow-wrap: break-word; }
 .projects-page .fact-label { font-size: var(--fren-label); line-height: 1.77; }
 .projects-page .project-images { margin-top: 0; }
-.projects-page .projects-section-heading { margin-bottom: 40px; }
+.projects-page .projects-section-heading { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; margin-bottom: 40px; }
 .projects-page :is(.projects-section-heading, .projects-inquiry) h2 {
   max-width: 22ch;
   font-size: var(--fren-heading);
@@ -89,7 +89,9 @@
 .projects-page .projects-section-copy > p:first-child { margin-top: 0; }
 .projects-page .projects-section-copy > .cta-link { margin-top: 28px; }
 .projects-page .project-item { scroll-margin-top: 110px; }
-.projects-inquiry-intro > p { max-width: 38ch; margin-top: 24px; color: var(--color-text-secondary); line-height: 1.55; }
+.projects-page .projects-inquiry h2 { max-width: 32ch; }
+.projects-contact-link { text-decoration: underline; text-underline-offset: .18em; }
+.projects-contact-link:focus-visible { outline: 2px solid var(--color-text); outline-offset: 5px; }
 .projects-inquiry-options { min-width: 0; }
 .projects-inquiry-options li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; padding-block: 28px; border-top: 1px solid var(--color-divider); }
 .projects-inquiry-options li:first-child { padding-top: 0; border-top: 0; }
@@ -101,7 +103,6 @@
 }
 @media (max-width: 767px) {
   .projects-page .projects-intro,
-  .projects-page .projects-section-heading,
   .projects-page .projects-inquiry,
   .projects-page .project-details { grid-template-columns: minmax(0, 1fr); }
   .projects-page .projects-intro { padding-top: 24px; }

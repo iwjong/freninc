@@ -12,7 +12,11 @@
   line-height: var(--fren-heading-leading);
   letter-spacing: normal;
 }
-.home-page .home-statement { font-size: var(--fren-statement); font-weight: var(--weight-light); }
+.home-page .home-statement { font-size: var(--fren-statement); font-weight: 700; }
+.home-page .home-intro .text-container { width: 92%; max-width: 52rem; }
+@media (min-width: 640px) {
+  .home-page .home-statement > span { display: block; }
+}
 .home-page :is(h3, .carousel-block .caption) {
   font-size: var(--fren-title);
   line-height: var(--fren-heading-leading);
@@ -37,6 +41,19 @@
 .home-page .block-title .copy-lead { max-width: 60ch; margin-top: 24px; }
 .home-page .purpose-copy { margin-top: 20px; }
 .home-page .purpose-copy h3 { width: auto; margin-bottom: 12px; }
+.home-page .focus-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px 24px; }
+.home-page .focus-grid li { min-width: 0; }
+.home-page .focus-grid h3 { margin-bottom: 12px; text-wrap: initial; }
+.home-page .focus-grid p { max-width: 45ch; color: var(--color-text-secondary); font-size: var(--fren-body); line-height: 1.6; text-wrap: pretty; }
+@media (min-width: 640px) {
+  .home-page .focus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .home-page .focus-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 1280px) {
+  .home-page .focus-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
 .home-page .project-name { width: auto; margin-top: 20px; margin-bottom: 0; }
 .home-page .featured-projects-block img { object-fit: cover; object-position: center; }
 .home-page .featured-projects-block a[href="/projects#uva-therapeutic-playroom"] img { object-position: center 65%; }

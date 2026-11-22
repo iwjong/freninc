@@ -10,7 +10,6 @@
   --about-rule: var(--color-divider);
   --about-surface: var(--color-surface);
   --about-paper: var(--color-paper);
-  --about-paper-muted: var(--color-ink-secondary);
   --about-gap: 24px;
   --about-display: var(--fren-display);
   --about-heading: var(--fren-heading);
@@ -74,19 +73,11 @@
 .about-process-overlay .about-number { font-size: var(--fren-title); font-weight: var(--weight-regular); line-height: 1; font-variant-numeric: tabular-nums; }
 .about-process-overlay h3 { max-width: 18ch; font-size: var(--about-title); line-height: var(--fren-heading-leading); letter-spacing: normal; }
 .about-process-overlay p { max-width: 35ch; margin-top: 16px; font-size: var(--fren-body); line-height: 1.5; }
-.about-brochure-panel { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; gap: clamp(32px, 5vw, 80px); padding: clamp(24px, 4vw, 64px); background: var(--about-paper); color: var(--about-ground); }
-.about-brochure-panel > h2 { font-size: var(--about-heading); line-height: var(--fren-heading-leading); letter-spacing: normal; }
-.about-brochure-copy > p { max-width: 60ch; margin-top: 0; color: var(--about-paper-muted); line-height: 1.55; }
-.about-brochure .about-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-.about-brochure .cta-link { border: 1px solid var(--about-ground); color: var(--about-ground); }
-.about-brochure .filled-black { background: var(--about-ground); color: var(--about-paper); }
-.about-brochure .cta-link:hover { background: var(--about-paper-muted); border-color: var(--about-paper-muted); color: #fff; }
 @media (max-width: 1279px) {
   .about-team .swiper-slide { width: calc((100% - 48px) / 3); }
   .about-page .about-values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 1023px) {
-  .about-brochure-panel { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .about-page .about-hero { gap: 32px; }
   .about-hero-copy h1 { font-size: var(--about-display); font-weight: var(--weight-light); }
   .about-hero-media img { height: 520px; }
