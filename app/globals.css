@@ -6,6 +6,7 @@
   --color-surface-raised: #303030;
   --color-text: #f2f2f2;
   --color-text-secondary: #cccccc;
+  --color-text-muted: #999999;
   --color-paper: #f2f2f2;
   --color-ink: #0c0c0c;
   --color-ink-secondary: #505050;
@@ -2813,7 +2814,7 @@ footer > .site-grid {
 footer :is(.body, .copyright, .reference-form-status) { color: var(--color-text-secondary); }
 footer a[href]:hover { color: var(--color-accent); text-decoration: underline; text-underline-offset: 4px; }
 footer .newsletter .input { background: var(--color-background); border-color: var(--color-background); color: var(--color-text); }
-footer .newsletter .placeholder { color: var(--color-text-secondary); }
+footer .newsletter .placeholder { color: var(--color-text-muted); white-space: nowrap; }
 footer .newsletter .cta-large { border-color: var(--color-text-secondary); }
 footer :focus-visible { outline-color: var(--color-text); }
 .cookie-bar a:hover { color: var(--color-ink); }
@@ -2852,11 +2853,11 @@ footer .newsletter form .form-field .input, footer .newsletter form .form-field 
   letter-spacing: normal;
   min-height: 44px;
 }
+footer .newsletter form .form-field .placeholder { font-size: var(--fren-label); }
 @media (min-width: 1280px) {
   /* Keep the email field readable beside the subscription action. */
   footer > .site-grid > .newsletter { grid-column: span 5 / span 5; }
   footer .reference-footer-desktop { grid-column: span 7 / span 7; }
-  footer .newsletter form .form-field .placeholder { font-size: var(--fren-label); }
 }
 
 .text-block h1.h1 { font-size: var(--fren-display); font-weight: var(--weight-light); }
