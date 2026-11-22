@@ -36,10 +36,16 @@ export default function SitePage({ html }) {
       const purpose = element.closest(".purpose-block");
       const aboutGallery = element.closest(".about-team, .about-capabilities, .about-process");
       const slideCount = element.querySelectorAll(".swiper-slide").length;
+      const initialSlide = hero ? Math.floor(Math.random() * slideCount) : 0;
+      if (hero) {
+        const image = element.querySelectorAll(".swiper-slide")[initialSlide]?.querySelector("img");
+        if (image) { image.loading = "eager"; image.fetchPriority = "high"; }
+      }
       const canLoop = !purpose && !aboutGallery && slideCount > 2;
       const swiper = new Swiper(element, {
         modules: [A11y, Autoplay, Keyboard],
         slidesPerView: "auto",
+        initialSlide,
         loop: canLoop,
         rewind: Boolean(hero) && !canLoop,
         speed: reducedMotion ? 0 : 650,

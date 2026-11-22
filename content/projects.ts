@@ -88,7 +88,7 @@ export const projects: Project[] = [
     client: "Memorial Health Dwaine & Cynthia Willett Children's Hospital of Savannah, HCA Healthcare",
     service: "Experience design, outdoor play space, interactive media",
     year: "2021",
-    media: numbered("hca-healing-garden", 16),
+    media: numbered("hca-healing-garden", 15),
   },
   {
     id: "sfch-picu-pacu-family",
