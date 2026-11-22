@@ -3,11 +3,15 @@
 .contact-intro { align-self: start; position: sticky; top: 120px; }
 .contact-intro h1 { font-size: var(--fren-display); font-weight: var(--weight-light); line-height: var(--fren-heading-leading); letter-spacing: normal; }
 .contact-intro > p { max-width: 39ch; margin-top: 28px; font-size: var(--fren-body); line-height: 1.6; color: var(--color-text-secondary); }
-.contact-details { display: grid; gap: 32px; margin-top: clamp(48px, 6vw, 88px); }
-.contact-details h2 { font-size: var(--fren-label); color: var(--color-text-secondary); margin-bottom: 10px; font-weight: var(--weight-medium); }
+.contact-details { display: grid; align-items: start; gap: 40px 32px; margin-top: clamp(48px, 6vw, 88px); }
+.contact-info-group { display: grid; gap: 16px; min-width: 0; }
+.contact-info-heading { display: grid; gap: 8px; }
+.contact-details h2 { margin: 0; font-size: var(--fren-label); line-height: 1.5; color: var(--color-text); font-weight: var(--weight-medium); }
 .contact-details a { font-size: var(--fren-body); overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: 5px; }
-.contact-details address { font-style: normal; color: var(--color-text-secondary); font-size: var(--fren-body); line-height: 1.6; }
-.contact-email-hint { margin-top: 10px; max-width: 30ch; color: var(--color-text-secondary); font-size: var(--fren-label); line-height: 1.5; }
+.contact-service-area { color: var(--color-text); font-size: var(--fren-body); line-height: 1.6; text-wrap: pretty; }
+.contact-channels { display: grid; justify-items: start; gap: 8px; }
+.contact-channels a { display: inline-flex; align-items: center; min-height: 28px; line-height: 1.5; }
+.contact-info-note { max-width: 36ch; color: var(--color-text-secondary); font-size: var(--fren-label); line-height: 1.5; text-wrap: pretty; }
 .contact-form-column { min-width: 0; max-width: 720px; }
 .contact-form-column > h2 { font-size: var(--fren-title); line-height: var(--fren-heading-leading); letter-spacing: normal; font-weight: var(--weight-medium); }
 .contact-form-intro { color: var(--color-text-secondary); font-size: var(--fren-body); line-height: 1.6; max-width: 48ch; margin-top: 16px; }
