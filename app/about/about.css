@@ -32,12 +32,13 @@
 .about-page .about-section-heading > p { max-width: 40ch; line-height: 1.55; color: var(--about-muted); }
 .about-page .cta-link, .about-page button, .about-page summary { -webkit-tap-highlight-color: transparent; }
 .about-page .cta-link { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
-.about-page :is(a, button, summary):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 5px; }
+.about-page :is(a, button, summary):focus-visible { outline: 2px solid var(--color-text); outline-offset: 5px; }
 .about-page :is(a, button, summary):active { opacity: 1; }
 .about-page summary { cursor: pointer; list-style: none; }
 .about-page summary::-webkit-details-marker { display: none; }
 .about-page .about-toggle { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; max-width: 100%; border: 1px solid var(--about-muted); color: inherit; white-space: normal; text-align: center; line-height: 1.4; }
-.about-page .about-toggle:is(:hover, :active), .about-page details[open] > .about-toggle { background: var(--color-accent); color: var(--color-ink); border-color: var(--color-accent); }
+.about-page details[open] > .about-toggle:not(:hover) { background: var(--color-paper); color: var(--color-ink); border-color: var(--color-paper); }
+.about-page .about-toggle:hover { background: var(--color-accent); color: var(--color-ink); border-color: var(--color-accent); }
 .about-page .about-bio { margin-top: 12px; }
 .about-page .about-bio > p { max-width: 43ch; margin-top: 20px; color: var(--about-muted); line-height: 1.6; }
 .about-page .swiper { overflow: clip; padding: 8px; margin: -8px; }

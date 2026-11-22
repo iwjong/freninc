@@ -30,25 +30,24 @@ export default function SitePage({ html }) {
     let swiperModules;
     const initCarousel = async (element) => {
       swiperModules ??= import("./carousel");
-      const { Swiper, A11y, Autoplay, Keyboard, Navigation } = await swiperModules;
+      const { Swiper, A11y, Autoplay, Keyboard } = await swiperModules;
       if (controller.signal.aborted) return;
       const hero = element.closest(".carousel-block");
       const purpose = element.closest(".purpose-block");
       const aboutGallery = element.closest(".about-team, .about-capabilities, .about-process");
-      const controls = purpose?.querySelectorAll(".carousel-nav button");
       const slideCount = element.querySelectorAll(".swiper-slide").length;
       const canLoop = !purpose && !aboutGallery && slideCount > 2;
       const swiper = new Swiper(element, {
-        modules: [A11y, Autoplay, Keyboard, Navigation],
-        slidesPerView: purpose ? 1 : "auto",
+        modules: [A11y, Autoplay, Keyboard],
+        slidesPerView: "auto",
         loop: canLoop,
         rewind: Boolean(hero) && !canLoop,
-        speed: reducedMotion ? 0 : 300,
+        speed: reducedMotion ? 0 : 650,
         spaceBetween: purpose || aboutGallery ? 16 : 0,
         breakpoints: aboutGallery ? { 640: { spaceBetween: 24 } } : undefined,
         autoplay: hero && !reducedMotion ? { delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true } : false,
         keyboard: { enabled: true, onlyInViewport: true },
-        navigation: controls ? { prevEl: controls[0], nextEl: controls[1] } : false,
+        navigation: false,
       });
       element.tabIndex = 0;
       element.setAttribute("role", "region");
@@ -56,7 +55,7 @@ export default function SitePage({ html }) {
       listen(element, "click", (event) => {
         if (!swiper.allowClick) return;
         const button = event.target.closest(".nav-button");
-        const direction = button ? (button.classList.contains("prev") ? "prev" : "next") : aboutGallery ? galleryDirection(event, element) : null;
+        const direction = button ? (button.classList.contains("prev") ? "prev" : "next") : aboutGallery || purpose ? galleryDirection(event, element) : null;
         if (direction && !window.getSelection()?.toString()) direction === "prev" ? swiper.slidePrev() : swiper.slideNext();
       });
       listen(element, "focusin", () => swiper.autoplay?.stop());
@@ -169,7 +168,7 @@ export default function SitePage({ html }) {
       hideCursor();
       if (!mouseNavigation.matches || event.pointerType !== "mouse") return;
       const arrow = event.target.closest(".nav-button");
-      const gallery = event.target.closest(".about-team .swiper, .about-capabilities .swiper, .about-process .swiper");
+      const gallery = event.target.closest(".about-team .swiper, .about-capabilities .swiper, .about-process .swiper, .purpose-block .swiper");
       const direction = arrow ? (arrow.classList.contains("prev") ? "prev" : "next") : gallery ? galleryDirection(event, gallery) : null;
       if (!direction) return;
       if (gallery) gallery.dataset.navigationDirection = direction;

@@ -19,9 +19,9 @@
 .inquiry-options label { position: relative; cursor: pointer; }
 .inquiry-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
 .inquiry-options span { display: flex; align-items: center; min-height: 44px; padding: 11px 18px; border: 1px solid var(--color-border); border-radius: 999px; font-size: 14px; line-height: 1.4; }
-.inquiry-options input:checked + span { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-ink); }
+.inquiry-options input:checked + span { background: var(--color-paper); border-color: var(--color-paper); color: var(--color-ink); }
 .inquiry-options label:hover span { border-color: var(--color-accent); }
-.inquiry-options input:focus-visible + span { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.inquiry-options input:focus-visible + span { outline: 2px solid var(--color-text); outline-offset: 4px; }
 .inquiry-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
 .inquiry-wide { grid-column: 1 / -1; }
 .inquiry-planning { margin-top: 24px; }
@@ -31,13 +31,13 @@
 .inquiry-field input, .inquiry-field textarea { display: block; width: 100%; min-width: 0; min-height: 50px; padding: 14px 16px; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-surface); color: var(--color-text); font: inherit; font-size: 16px; line-height: 1.5; }
 .inquiry-field textarea { resize: vertical; min-height: 176px; }
 .inquiry-field input::placeholder { color: var(--color-text-secondary); }
-.contact-page :is(a, button, input, textarea):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.contact-page :is(a, button, input, textarea):focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; }
 .inquiry-field [aria-invalid=true] { border-color: var(--color-error); }
 .inquiry-error { display: block; color: var(--color-error); font-size: 14px; line-height: 1.5; }
 .inquiry-error:not(:empty) { margin-top: 8px; }
 .inquiry-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .inquiry-consent { display: flex; align-items: start; gap: 12px; margin-top: 28px; color: var(--color-text-secondary); font-size: 14px; line-height: 1.6; cursor: pointer; }
-.inquiry-consent input { flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; accent-color: var(--color-accent); }
+.inquiry-consent input { flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; accent-color: var(--color-paper); }
 .inquiry-consent a { color: var(--color-text); text-decoration: underline; text-underline-offset: 3px; }
 .inquiry-submit { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
 .inquiry-submit button { min-height: 48px; }

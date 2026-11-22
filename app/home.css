@@ -57,3 +57,8 @@
   mix-blend-mode: screen;
   opacity: .82;
 }
+.home-page .purpose-block .swiper { overflow: clip; }
+.home-page .purpose-block .swiper-slide { width: 86%; height: auto; }
+.home-page .purpose-block .swiper[data-navigation-direction] { cursor: none; }
+.home-page .purpose-block .swiper:not(.swiper-initialized) { overflow-x: auto; }
+.home-page .purpose-block .swiper:not(.swiper-initialized) .swiper-wrapper { gap: 16px; }
