@@ -10,7 +10,6 @@ export function initContactForm(form, signal) {
   const status = form.querySelector('.inquiry-status');
   const buttonLabel = button.textContent;
   let pending = false;
-  let submission;
   const listen = (event, callback) => form.addEventListener(event, callback, { signal });
   const syncType = () => {
     const type = form.elements.inquiryType.value;
@@ -46,7 +45,7 @@ export function initContactForm(form, signal) {
     event.target.setCustomValidity?.('');
     setError(event.target.name);
   });
-  listen('submit', async event => {
+  listen('submit', event => {
     event.preventDefault();
     if (pending) return;
     let invalid;
@@ -64,33 +63,41 @@ export function initContactForm(form, signal) {
     const data = new FormData(form);
     const payload = Object.fromEntries(data);
     payload.services = data.getAll('services');
-    payload.consent = data.has('consent');
-    const serialized = JSON.stringify(payload);
-    if (submission?.serialized !== serialized) submission = { serialized, id: crypto.randomUUID() };
-    payload.submissionId = submission.id;
     const fieldsets = [...form.querySelectorAll('fieldset')].map(element => [element, element.disabled]);
+    if (String(payload.fax || '').trim()) {
+      showStatus('Please email support@freninc.com to continue your inquiry.', 'error');
+      return;
+    }
+    const labels = { project: 'New project', consulting: 'Consulting', collaboration: 'Collaboration', general: 'Something else' };
+    const lines = [
+      `Inquiry: ${labels[payload.inquiryType] || payload.inquiryType}`,
+      `Name: ${payload.name}`,
+      `Email: ${payload.email}`,
+      `Organization: ${payload.organization || 'Not specified'}`,
+    ];
+    if (payload.services?.length) lines.push(`Interests: ${payload.services.filter(Boolean).join(', ')}`);
+    if (payload.timing) lines.push(`Timing: ${payload.timing}`);
+    if (payload.budget) lines.push(`Budget: ${payload.budget}`);
+    if (payload.discipline) lines.push(`Discipline: ${payload.discipline}`);
+    if (payload.website) lines.push(`Website: ${payload.website}`);
+    lines.push('', 'Message:', payload.message, '', 'Privacy acknowledgement: accepted');
+    const compose = new URL('https://mail.google.com/mail/');
+    compose.searchParams.set('view', 'cm');
+    compose.searchParams.set('fs', '1');
+    compose.searchParams.set('to', 'support@freninc.com');
+    compose.searchParams.set('su', `FREN website / ${labels[payload.inquiryType] || 'Inquiry'}`);
+    compose.searchParams.set('body', lines.join('\n'));
     pending = true;
     button.disabled = true;
-    button.textContent = 'Sending…';
+    button.textContent = 'Opening…';
     form.setAttribute('aria-busy', 'true');
     fieldsets.forEach(([element]) => { element.disabled = true; });
     form.elements.consent.disabled = true;
     status.hidden = true;
     try {
-      const response = await fetch('/api/inquiries', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload), signal: AbortSignal.any([signal, AbortSignal.timeout(20000)]),
-      });
-      const result = await response.json();
-      if (!response.ok) {
-        Object.entries(result.errors || {}).forEach(([name, message]) => setError(name, message));
-        throw new Error(result.message || 'We could not send your inquiry. Please try again or email support@freninc.com.');
-      }
-      form.reset();
-      submission = undefined;
-      showStatus(result.message, 'success');
-    } catch (error) {
-      if (!signal.aborted) showStatus(error.name === 'Error' ? error.message : 'The connection was interrupted. Your answers are still here. Please try again or email support@freninc.com.', 'error');
+      const opened = window.open(compose.href, '_blank', 'noopener,noreferrer');
+      if (!opened) window.location.assign(compose.href);
+      if (!signal.aborted) showStatus('Gmail opened a message to support@freninc.com. Send that message to reach FREN. Your answers are still on this page.', 'success');
     } finally {
       pending = false;
       fieldsets.forEach(([element, disabled]) => { element.disabled = disabled; });

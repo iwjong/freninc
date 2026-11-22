@@ -1,1 +1,4 @@
-export default { devIndicators: false };
+export default {
+  devIndicators: false,
+  output: "export",
+};
