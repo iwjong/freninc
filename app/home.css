@@ -3,20 +3,20 @@
 .home-page > section { padding-bottom: var(--fren-section-space); }
 .home-page :is(h1, h2, h3, .caption) {
   min-width: 0;
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-medium);
   overflow-wrap: break-word;
   text-wrap: balance;
 }
 .home-page :is(.home-statement, h2) {
   font-size: var(--fren-heading);
-  line-height: 1.12;
-  letter-spacing: -.025em;
+  line-height: var(--fren-heading-leading);
+  letter-spacing: normal;
 }
-.home-page .home-statement { font-size: var(--fren-statement); }
+.home-page .home-statement { font-size: var(--fren-statement); font-weight: var(--weight-light); }
 .home-page :is(h3, .carousel-block .caption) {
   font-size: var(--fren-title);
-  line-height: 1.15;
-  letter-spacing: -.02em;
+  line-height: var(--fren-heading-leading);
+  letter-spacing: normal;
 }
 .home-page :is(.copy-lead, .category-list-desc, .purpose-copy p) {
   font-size: var(--fren-body);
@@ -26,7 +26,7 @@
   color: var(--color-text-secondary);
 }
 .home-page :is(.category-list-desc, .purpose-copy p) {
-  font-size: 16px;
+  font-size: var(--fren-body);
   line-height: 1.6;
   max-width: 45ch;
   width: auto;
@@ -42,11 +42,18 @@
 .home-page .featured-projects-block a[href="/projects#uva-therapeutic-playroom"] img { object-position: center 65%; }
 .home-page .subscribe-block h2 { width: auto; max-width: 24ch; margin-bottom: 32px; }
 .home-page :is(.cta-small, .cta-large) {
-  font-size: clamp(14px, .9375vw, 18px);
+  font-size: var(--fren-label);
   line-height: 1.4;
   letter-spacing: normal;
 }
-.home-page .newsletter :is(input, .placeholder) { font-size: 16px; line-height: 1.4; letter-spacing: normal; }
+.home-page .newsletter :is(input, .placeholder) { font-size: var(--fren-body); line-height: 1.4; letter-spacing: normal; }
+.home-page .carousel-image::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  pointer-events: none;
+  background: linear-gradient(to top, var(--color-caption-scrim), var(--color-caption-scrim) 38%, var(--color-transparent));
+}
 .purpose-filter-defs { position: absolute; pointer-events: none; }
 .home-page .purpose-block .thumbnail {
   background: var(--color-surface);

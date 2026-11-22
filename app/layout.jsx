@@ -1,5 +1,6 @@
 import "swiper/css";
 import "swiper/css/a11y";
+import "./fonts.css";
 import "./globals.css";
 
 export const metadata = {

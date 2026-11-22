@@ -3,7 +3,7 @@
 .projects-page :is(h1, h2, h3) {
   min-width: 0;
   margin: 0;
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-medium);
   overflow-wrap: break-word;
   text-wrap: balance;
 }
@@ -26,8 +26,9 @@
 .projects-intro h1 {
   max-width: 18ch;
   font-size: var(--fren-display);
-  line-height: 1.06;
-  letter-spacing: -.03em;
+  font-weight: var(--weight-light);
+  line-height: var(--fren-heading-leading);
+  letter-spacing: normal;
 }
 .projects-intro-copy { padding-bottom: 4px; }
 .projects-page .projects-intro-copy p { max-width: 38ch; }
@@ -43,12 +44,13 @@
 .projects-page .project-title { max-width: 52rem; }
 .projects-page .project-title :is(h2, h3) {
   font-size: var(--fren-title);
-  line-height: 1.15;
-  letter-spacing: -.02em;
+  line-height: var(--fren-heading-leading);
+  letter-spacing: normal;
 }
 .projects-page .project-theme {
+  font-style: italic;
   margin: 12px 0 0;
-  font-size: 16px;
+  font-size: var(--fren-body);
   line-height: 1.5;
   color: var(--color-text-secondary);
 }
@@ -57,7 +59,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(14px, .9375vw, 18px);
+  font-size: var(--fren-label);
   line-height: 1.4;
   letter-spacing: normal;
 }
@@ -71,18 +73,18 @@
   grid-template-columns: 5rem minmax(0, 1fr);
   gap: 16px;
   max-width: 48ch;
-  font-size: 16px;
+  font-size: var(--fren-body);
   line-height: 1.55;
 }
 .projects-page .fact-row span { overflow-wrap: break-word; }
-.projects-page .fact-label { font-size: 14px; line-height: 1.77; }
+.projects-page .fact-label { font-size: var(--fren-label); line-height: 1.77; }
 .projects-page .project-images { margin-top: 0; }
 .projects-page .projects-section-heading { margin-bottom: 40px; }
 .projects-page :is(.projects-section-heading, .projects-inquiry) h2 {
   max-width: 22ch;
   font-size: var(--fren-heading);
-  line-height: 1.12;
-  letter-spacing: -.025em;
+  line-height: var(--fren-heading-leading);
+  letter-spacing: normal;
 }
 .projects-page .projects-section-copy > p:first-child { margin-top: 0; }
 .projects-page .projects-section-copy > .cta-link { margin-top: 28px; }

@@ -1,0 +1,113 @@
+/* Söhne: all supplied weights, with real italic faces; fetched only when used. */
+@font-face {
+  font-family: "Soehne";
+  font-style: normal;
+  font-weight: 250;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-extraleicht.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: italic;
+  font-weight: 250;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-extraleicht-kursiv.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-leicht.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-leicht-kursiv.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-buch.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-buch-kursiv.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-kraftig.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-kraftig-kursiv.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-halbfett.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-halbfett-kursiv.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-dreiviertelfett.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-dreiviertelfett-kursiv.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-fett.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-fett-kursiv.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-extrafett.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Soehne";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/assets/brand/fonts/soehne/soehne-extrafett-kursiv.woff2") format("woff2");
+}
