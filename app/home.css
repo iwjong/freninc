@@ -22,7 +22,7 @@
   line-height: 1.55;
   letter-spacing: normal;
   text-wrap: pretty;
-  color: #a6a6a6;
+  color: var(--color-text-secondary);
 }
 .home-page :is(.category-list-desc, .purpose-copy p) {
   font-size: 16px;
@@ -48,7 +48,7 @@
 .home-page .newsletter :is(input, .placeholder) { font-size: 16px; line-height: 1.4; letter-spacing: normal; }
 .purpose-filter-defs { position: absolute; pointer-events: none; }
 .home-page .purpose-block .thumbnail {
-  background: #181818;
+  background: var(--color-surface);
   isolation: isolate;
   overflow: hidden;
 }

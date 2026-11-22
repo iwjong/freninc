@@ -5,12 +5,12 @@
 /* Hallmark · retained brand: foreground and font inherit from the site; page gutters, media radii and pill geometry reuse the shared classes. */
 /* Hallmark · hero-review: fix, mobile crop resolved · finish-review: subagent, ship · Short measures serve gallery captions and brief summaries; full-page capture unavailable, sequential viewport captures reviewed. */
 :root {
-  --about-ground: #0c0c0c;
-  --about-muted: #a6a6a6;
-  --about-rule: #363636;
-  --about-surface: #1b1b1b;
-  --about-paper: #f2f2f2;
-  --about-paper-muted: #525252;
+  --about-ground: var(--color-background);
+  --about-muted: var(--color-text-secondary);
+  --about-rule: var(--color-divider);
+  --about-surface: var(--color-surface);
+  --about-paper: var(--color-paper);
+  --about-paper-muted: var(--color-ink-secondary);
   --about-gap: 24px;
   --about-display: clamp(44px, 5.25vw, 80px);
   --about-heading: var(--fren-heading);
@@ -32,12 +32,12 @@
 .about-page .about-section-heading > p { max-width: 40ch; line-height: 1.55; color: var(--about-muted); }
 .about-page .cta-link, .about-page button, .about-page summary { -webkit-tap-highlight-color: transparent; }
 .about-page .cta-link { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
-.about-page :is(a, button, summary):focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
-.about-page :is(a, button, summary):active { opacity: .75; }
+.about-page :is(a, button, summary):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 5px; }
+.about-page :is(a, button, summary):active { opacity: 1; }
 .about-page summary { cursor: pointer; list-style: none; }
 .about-page summary::-webkit-details-marker { display: none; }
 .about-page .about-toggle { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; max-width: 100%; border: 1px solid var(--about-muted); color: inherit; white-space: normal; text-align: center; line-height: 1.4; }
-.about-page .about-toggle:hover, .about-page details[open] > .about-toggle { background: var(--about-paper); color: var(--about-ground); border-color: var(--about-paper); }
+.about-page .about-toggle:is(:hover, :active), .about-page details[open] > .about-toggle { background: var(--color-accent); color: var(--color-ink); border-color: var(--color-accent); }
 .about-page .about-bio { margin-top: 12px; }
 .about-page .about-bio > p { max-width: 43ch; margin-top: 20px; color: var(--about-muted); line-height: 1.6; }
 .about-page .swiper { overflow: clip; padding: 8px; margin: -8px; }
@@ -52,12 +52,12 @@
 .about-services-gallery .about-service-cover { width: 42%; position: relative; overflow: clip; background: var(--about-ground); }
 .about-service-cover figure { height: 100%; }
 .about-service-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75; }
-.about-service-cover figcaption { position: absolute; inset: auto 0 0; padding: 24px 32px; color: #fff; font-size: 16px; line-height: 1.5; }
+.about-service-cover figcaption { position: absolute; inset: auto 0 0; padding: 24px 32px; color: var(--color-ink); font-size: 16px; line-height: 1.5; }
 .about-service-card { display: flex; flex-direction: column; min-width: 0; padding: clamp(24px, 2.5vw, 40px); background: var(--about-paper); color: var(--about-ground); }
 .about-service-card h3 { max-width: 16ch; font-size: clamp(24px, 2.1vw, 32px); line-height: 1.08; letter-spacing: -.025em; }
 .about-service-card .about-service-description { max-width: 45ch; margin-top: auto; padding-top: 72px; font-size: 16px; line-height: 1.5; color: var(--about-ground); }
 .about-service-card .about-tags { display: flex; flex-wrap: wrap; align-content: start; gap: 8px; margin-top: 24px; font-size: 14px; line-height: 1.25; }
-.about-page .about-tags li { border: 0; border-radius: 999px; padding: 8px 14px; background: #222; color: var(--about-paper); font-size: inherit; text-transform: uppercase; }
+.about-page .about-tags li { border: 0; border-radius: 999px; padding: 8px 14px; background: var(--color-background); color: var(--about-paper); font-size: inherit; text-transform: uppercase; }
 .about-page .swiper[data-navigation-direction] { cursor: none; }
 .about-page .about-values-panel { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.35fr); gap: clamp(48px, 6vw, 96px); align-items: start; }
 .about-values-panel > h2 { max-width: 17ch; font-size: var(--about-heading); letter-spacing: -.025em; line-height: 1.08; }
