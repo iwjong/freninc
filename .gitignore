@@ -11,3 +11,5 @@ tmp/
 .hallmark/
 .impeccable/
 docs/
+.serena/
+AGENTS.md
