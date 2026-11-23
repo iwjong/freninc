@@ -8,6 +8,14 @@ const prompts = {
 };
 
 export function initContactForm(form, signal) {
+  const startingPoints = new Map([
+    ['community', "I'd like to discuss a community or civic space."],
+    ['visitor', "I'd like to discuss a visitor experience."],
+    ['faith', "I'd like to discuss a church or gathering space."],
+    ['world-outreach-church', "I'd like to learn more about the World Outreach Church project."],
+  ]);
+  const startingPoint = startingPoints.get(new URLSearchParams(window.location.search).get('topic'));
+  if (startingPoint && !form.elements.message.value) form.elements.message.value = `${startingPoint}\n\n`;
   const button = form.querySelector('[type="submit"]');
   const status = form.querySelector('.inquiry-status');
   const buttonLabel = button.textContent;

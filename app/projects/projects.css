@@ -89,6 +89,7 @@
 .projects-page .projects-section-copy > p:first-child { margin-top: 0; }
 .projects-page .projects-section-copy > .cta-link { margin-top: 28px; }
 .projects-page .project-item { scroll-margin-top: 110px; }
+.project-inquiry-link { margin-top: 24px; }
 .projects-page .projects-inquiry h2 { max-width: 32ch; }
 .projects-contact-link { text-decoration: underline; text-underline-offset: .18em; }
 .projects-contact-link:focus-visible { outline: 2px solid var(--color-text); outline-offset: 5px; }
