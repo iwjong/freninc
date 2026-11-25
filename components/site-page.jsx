@@ -20,12 +20,10 @@ export default function SitePage({ html }) {
     const carousels = [];
     const mouseNavigation = window.matchMedia("(hover: hover) and (pointer: fine)");
     const galleryDirection = (event, element) => {
-      if (!mouseNavigation.matches || event.pointerType === "touch" || !element.swiper || element.swiper.isLocked) return null;
+      if (!mouseNavigation.matches || event.pointerType === "touch") return null;
       if (event.target.closest("a, button, summary, input, textarea, select")) return null;
       const bounds = element.getBoundingClientRect();
-      const direction = event.clientX < bounds.left + bounds.width / 2 ? "prev" : "next";
-      if (direction === "prev" ? element.swiper.isBeginning : element.swiper.isEnd) return null;
-      return direction;
+      return event.clientX < bounds.left + bounds.width / 2 ? "prev" : "next";
     };
     let swiperModules;
     const initCarousel = async (element) => {
@@ -34,14 +32,14 @@ export default function SitePage({ html }) {
       if (controller.signal.aborted) return;
       const hero = element.closest(".carousel-block");
       const purpose = element.closest(".purpose-block");
-      const aboutGallery = element.closest(".about-team, .about-capabilities, .about-process");
+      const cardGallery = element.closest(".about-team, .about-capabilities, .about-process, .focus-block");
       const slideCount = element.querySelectorAll(".swiper-slide").length;
       const initialSlide = hero ? Math.floor(Math.random() * slideCount) : 0;
       if (hero) {
         const image = element.querySelectorAll(".swiper-slide")[initialSlide]?.querySelector("img");
         if (image) { image.loading = "eager"; image.fetchPriority = "high"; }
       }
-      const canLoop = !purpose && !aboutGallery && slideCount > 2;
+      const canLoop = !purpose && !cardGallery && slideCount > 2;
       const swiper = new Swiper(element, {
         modules: [A11y, Autoplay, Keyboard],
         slidesPerView: "auto",
@@ -49,20 +47,22 @@ export default function SitePage({ html }) {
         loop: canLoop,
         rewind: Boolean(hero) && !canLoop,
         speed: reducedMotion ? 0 : 650,
-        spaceBetween: purpose || aboutGallery ? 16 : 0,
-        breakpoints: aboutGallery ? { 640: { spaceBetween: 24 } } : undefined,
+        spaceBetween: purpose || cardGallery ? 16 : 0,
+        breakpoints: cardGallery ? { 640: { spaceBetween: 24 } } : undefined,
         autoplay: hero && !reducedMotion ? { delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true } : false,
         keyboard: { enabled: true, onlyInViewport: true },
         navigation: false,
       });
       element.tabIndex = 0;
       element.setAttribute("role", "region");
-      element.setAttribute("aria-label", hero ? "Featured work" : purpose ? "Our Purpose" : aboutGallery ? element.getAttribute("aria-label") : `${element.closest(".project-item").querySelector(".brand").textContent} gallery`);
+      element.setAttribute("aria-label", hero ? "Featured work" : purpose ? "Our Purpose" : cardGallery ? element.getAttribute("aria-label") : `${element.closest(".project-item").querySelector(".brand").textContent} gallery`);
       listen(element, "click", (event) => {
         if (!swiper.allowClick) return;
         const button = event.target.closest(".nav-button");
-        const direction = button ? (button.classList.contains("prev") ? "prev" : "next") : aboutGallery || purpose ? galleryDirection(event, element) : null;
-        if (direction && !window.getSelection()?.toString()) direction === "prev" ? swiper.slidePrev() : swiper.slideNext();
+        const direction = button ? (button.classList.contains("prev") ? "prev" : "next") : cardGallery || purpose ? galleryDirection(event, element) : null;
+        if (!direction || window.getSelection()?.toString()) return;
+        if (!button && (swiper.isLocked || (direction === "prev" ? swiper.isBeginning : swiper.isEnd))) return;
+        direction === "prev" ? swiper.slidePrev() : swiper.slideNext();
       });
       listen(element, "focusin", () => swiper.autoplay?.stop());
       listen(element, "focusout", () => {
@@ -174,7 +174,7 @@ export default function SitePage({ html }) {
       hideCursor();
       if (!mouseNavigation.matches || event.pointerType !== "mouse") return;
       const arrow = event.target.closest(".nav-button");
-      const gallery = event.target.closest(".about-team .swiper, .about-capabilities .swiper, .about-process .swiper, .purpose-block .swiper");
+      const gallery = event.target.closest(".about-team .swiper, .about-capabilities .swiper, .about-process .swiper, .purpose-block .swiper, .focus-block .swiper");
       const direction = arrow ? (arrow.classList.contains("prev") ? "prev" : "next") : gallery ? galleryDirection(event, gallery) : null;
       if (!direction) return;
       if (gallery) gallery.dataset.navigationDirection = direction;
@@ -184,6 +184,7 @@ export default function SitePage({ html }) {
       cursor.dataset.direction = direction;
       cursor.classList.toggle("is-pressed", Boolean(event.buttons & 1));
     };
+    listen(page, "pointerover", updateCursor);
     listen(page, "pointermove", updateCursor);
     listen(page, "pointerleave", hideCursor);
     listen(page, "pointerdown", updateCursor);

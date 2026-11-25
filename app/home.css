@@ -17,7 +17,8 @@
 @media (min-width: 640px) {
   .home-page .home-statement > span { display: block; }
 }
-.home-page :is(h3, .carousel-block .caption) {
+.home-page h3,
+.home-page .carousel-block .caption {
   font-size: var(--fren-title);
   line-height: var(--fren-heading-leading);
   letter-spacing: normal;
@@ -41,43 +42,139 @@
 .home-page .block-title .copy-lead { max-width: 60ch; margin-top: 24px; }
 .home-page .purpose-copy { margin-top: 20px; }
 .home-page .purpose-copy h3 { width: auto; margin-bottom: 12px; }
-.home-page .focus-grid { padding-inline: clamp(24px, 4vw, 48px); background: var(--color-surface); }
-.home-page .focus-card { display: grid; gap: 24px; min-width: 0; padding-block: 32px; }
-.home-page .focus-card + .focus-card { border-top: 1px solid var(--color-divider); }
-.home-page .focus-grid .focus-card h3 { font-size: clamp(24px, 2vw, 32px); font-weight: var(--weight-regular); line-height: 1.25; text-transform: uppercase; text-wrap: initial; }
-.home-page .focus-values { display: flex; flex-wrap: wrap; align-content: start; gap: 8px; max-width: 40ch; }
-.home-page .focus-values li { padding: 8px 16px; border-radius: 999px; background: var(--color-surface-raised); color: var(--color-text); font-size: 13px; line-height: 1.4; }
-.home-page .focus-card > p { margin-top: 16px; max-width: 52ch; color: var(--color-text-secondary); font-size: var(--fren-body); line-height: 1.6; text-wrap: pretty; }
-@media (min-width: 800px) {
-  .home-page .focus-card { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto 1fr; column-gap: 32px; row-gap: 64px; min-height: 360px; padding-block: 40px; }
-  .home-page .focus-card h3 { grid-row: 1 / 3; max-width: 18ch; }
-  .home-page .focus-values { grid-column: 2; }
-  .home-page .focus-card > p { grid-column: 2; align-self: end; margin-top: 0; }
+.focus-block .focus-gallery { overflow: clip; padding: 8px; margin: -8px; }
+.focus-block .focus-gallery[data-navigation-direction] { cursor: none; }
+.focus-block .focus-gallery:not(.swiper-initialized) .swiper-wrapper { gap: 16px; }
+.focus-gallery .focus-card {
+  --focus-card-height: clamp(20rem, 32vw, 28rem);
+  position: relative;
+  display: flex;
+  align-self: flex-start;
+  width: min(96%, calc(var(--focus-card-height) * var(--focus-ratio)));
+  height: auto;
+  aspect-ratio: var(--focus-ratio);
+  overflow: clip;
+  background: #000;
 }
-.home-page .project-start-panel { display: grid; gap: 32px; padding: clamp(24px, 4vw, 48px); background: var(--color-surface); }
+@media (min-width: 640px) {
+  .focus-block .focus-gallery:not(.swiper-initialized) .swiper-wrapper { gap: 24px; }
+}
+.home-page :is(.focus-card, .focus-civic-media) > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-page :is(.focus-card > img, .focus-civic-media) {
+  opacity: .42;
+}
+.home-page .focus-civic-media {
+  --civic-scale: 1.16;
+  --civic-offset: 46px;
+  --civic-top-slice: .18;
+  --civic-join: clamp(5px, 1vw, 9px);
+  position: absolute;
+  inset: 0 2% 0 -2%;
+}
+.home-page .focus-civic-media > .focus-civic-top {
+  /* Extend the scenery above the faces to meet the enlarged photo. */
+  width: calc(100% * var(--civic-scale));
+  max-width: none;
+  height: calc(100% * var(--civic-scale) + var(--civic-offset) / var(--civic-top-slice));
+  object-fit: fill;
+  clip-path: inset(0 0 calc(100% * (1 - var(--civic-top-slice)) - var(--civic-join) * var(--civic-scale)));
+}
+.home-page .focus-civic-media > .focus-civic-photo {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent calc(100% * var(--civic-top-slice) - var(--civic-join)),
+    #000 calc(100% * var(--civic-top-slice) + var(--civic-join))
+  );
+  transform: translateY(var(--civic-offset)) scale(var(--civic-scale));
+  transform-origin: top left;
+}
+@media (max-width: 359px) {
+  .home-page .focus-civic-media {
+    --civic-scale: 1.06;
+    --civic-offset: 49.5px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1369px) {
+  .home-page .focus-civic-media { --civic-offset: clamp(46px, 99px - 3.8vw, 64px); }
+}
+@media (min-width: 1370px) {
+  .home-page .focus-civic-media { --civic-offset: 27px; }
+}
+.home-page .focus-copy {
+  --focus-copy-inset: clamp(16px, 1.75vw, 28px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  padding: var(--focus-copy-inset);
+  color: #fff;
+}
+.home-page .focus-card--landscape .focus-copy > :is(.focus-values, p) {
+  max-width: calc(var(--focus-card-height) * var(--focus-portrait-ratio) - 2 * var(--focus-copy-inset));
+}
+.home-page .focus-copy h3 { font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.15; text-wrap: wrap; }
+.home-page .focus-copy p { margin-top: auto; line-height: 1.45; text-wrap: pretty; }
+.home-page .focus-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  font-size: .75rem;
+  line-height: 1.25;
+}
+.home-page .focus-values li {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+}
+@media (max-width: 639px) {
+  .home-page .focus-card--landscape .focus-copy {
+    gap: 6px;
+    padding: 10px 12px;
+  }
+  .home-page .focus-card--landscape h3 { font-size: var(--fren-title); }
+  .home-page .focus-card--landscape p { font-size: var(--fren-label); line-height: 1.35; }
+  .home-page .focus-card--landscape .focus-values { gap: 4px; font-size: .6875rem; }
+  .home-page .focus-card--landscape .focus-values li { padding: 2px 4px; }
+}
+@media (max-width: 359px) {
+  .focus-gallery .focus-card--landscape { width: 100%; }
+  .home-page .focus-card--landscape .focus-copy { gap: 4px; padding-block: 8px; }
+}
+.home-page .project-start-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: clamp(24px, 4vw, 48px);
+  background: var(--color-surface);
+}
 .home-page .project-start-copy p { max-width: 48ch; margin-top: 24px; color: var(--color-text-secondary); line-height: 1.6; text-wrap: pretty; }
-.home-page .project-start-actions > p { margin-bottom: 16px; color: var(--color-text-secondary); font-size: var(--fren-label); line-height: 1.5; }
-.home-page .project-start-actions ul { display: flex; flex-wrap: wrap; gap: 12px; }
-.home-page .project-start-actions .cta-small { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; max-width: 100%; white-space: normal; text-align: center; }
+.home-page .project-start-panel .cta-small { display: inline-flex; align-items: center; min-height: 44px; }
 .home-page .partner-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .home-page .partner-grid > li { min-width: 0; aspect-ratio: 1; }
 @media (min-width: 640px) {
   .home-page .partner-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 }
-@media (min-width: 1024px) {
-  .home-page .project-start-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: center; }
-}
 @media (min-width: 1280px) {
   .home-page .partner-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
-.home-page .project-name { width: auto; margin-top: 20px; margin-bottom: 0; }
-.home-page .featured-projects-block img { object-fit: cover; object-position: center; }
-.home-page .featured-projects-block a[href="/projects#uva-therapeutic-playroom"] img { object-position: center 65%; }
 .home-page :is(.cta-small, .cta-large) {
   font-size: var(--fren-label);
   line-height: 1.4;
   letter-spacing: normal;
 }
+.home-page .carousel-block :is(.carousel-image, .carousel-image img) { position: absolute; inset: 0; width: 100%; height: 100%; }
 .home-page .carousel-image::after {
   content: "";
   position: absolute;

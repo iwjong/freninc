@@ -13,7 +13,6 @@ export default async function Page() {
   const home = renderHome(projects, inProgress);
   const html = (await readPage("home"))
     .replace("<!-- home-hero -->", home.hero)
-    .replace("<!-- home-selected -->", home.selected)
     .replace("<!-- home-category-projects -->", home.projectsCategory)
     .replace("<!-- home-category-progress -->", home.progressCategory);
   return <SitePage html={html} />;
