@@ -4,6 +4,7 @@ import { readPage } from "../../lib/read-page";
 export const metadata = {
   title: "Terms of service | FREN Inc.",
   description: "Terms for using the FREN website, viewing our work and discussing design services.",
+  alternates: { canonical: "/terms-of-service" },
 };
 
 export default async function Page() {

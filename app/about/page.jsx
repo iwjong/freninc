@@ -3,8 +3,9 @@ import { readPage } from "../../lib/read-page";
 import "./about.css";
 
 export const metadata = {
-  title: "About | FREN Inc.",
-  description: "Meet FREN, an experience design studio in Richmond Hill, Georgia, connecting physical environments, original content and interactive media.",
+  title: "About the Studio | FREN Inc.",
+  description: "Meet the FREN team and learn how we approach experience design, from early conversations and research through design and delivery.",
+  alternates: { canonical: "/about" },
 };
 
 export default async function Page() {

@@ -1,12 +1,13 @@
 import "swiper/css";
 import "swiper/css/a11y";
+import { siteDescription, siteName, siteUrl } from "../lib/site";
 import "./fonts.css";
 import "./globals.css";
 
 export const metadata = {
-  title: "FREN Inc.",
-  description: "FREN combines physical design, original artwork and interactive technology to create experiences for care, learning and play.",
-  robots: { index: false, follow: false },
+  metadataBase: new URL(siteUrl),
+  title: siteName,
+  description: siteDescription,
   icons: { icon: "/assets/brand/favicon.ico" },
 };
 

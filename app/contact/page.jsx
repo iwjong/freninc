@@ -6,6 +6,7 @@ import "./contact.css";
 export const metadata = {
   title: "Contact | FREN Inc.",
   description: "Talk with FREN about a new project, design consulting or a creative collaboration.",
+  alternates: { canonical: "/contact" },
 };
 
 export default async function Page() {

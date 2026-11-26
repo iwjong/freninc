@@ -4,6 +4,7 @@ import { readPage } from "../../lib/read-page";
 export const metadata = {
   title: "Privacy policy | FREN Inc.",
   description: "How FREN handles website information, project inquiries and privacy requests.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 export default async function Page() {

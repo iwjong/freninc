@@ -5,8 +5,9 @@ import { renderProjects } from "../../lib/render-projects";
 import "./projects.css";
 
 export const metadata = {
-  title: "Projects | FREN Inc.",
-  description: "Explore FREN projects for Telfair Museums, UVA Health Children's, HCA Memorial Health and Studer Family Children's Hospital.",
+  title: "Experience Design Projects | FREN Inc.",
+  description: "Explore FREN’s work in exhibition design, environmental graphics, wayfinding, and interactive experiences, from Telfair Museums to UVA Health Children’s.",
+  alternates: { canonical: "/projects" },
 };
 
 export default async function Page() {
