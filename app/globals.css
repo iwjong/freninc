@@ -2570,24 +2570,74 @@ label:has(.reference-radio:focus-visible) { outline: 2px solid #fff; outline-off
 .form-field .input::placeholder { color: var(--color-text-secondary); }
 .form-field .input:-webkit-autofill { -webkit-text-fill-color: var(--color-text); }
 .footer-layout {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px 24px;
-  border-top: 1px solid var(--color-divider);
-  padding-top: 20px;
+  display: grid;
+  align-items: center;
+  gap: 24px;
+  padding: clamp(24px, 4.3vw, 32px) clamp(16px, 2.7vw, 32px);
+  background: var(--color-footer);
   color: var(--color-text-secondary);
   font-size: var(--fren-label);
   line-height: 1.5;
 }
-.footer-navigation, .footer-navigation ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 6px clamp(6px, 1.5vw, 24px);
+.footer-subscribe {
+  display: grid;
+  align-self: start;
+  gap: 12px;
 }
-.footer-navigation { margin-inline-start: auto; }
+.footer-subscribe input {
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--color-background);
+  opacity: 1;
+}
+.footer-subscribe input::placeholder { color: var(--color-text-muted); }
+.footer-subscribe .cta-large.filled-grey {
+  padding: 0 18px;
+  border-color: var(--color-border);
+  background: var(--color-surface-raised);
+  color: var(--color-text-secondary);
+}
+.footer-subscribe :disabled { cursor: not-allowed; }
+.footer-navigation {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(24px, 4.1667vw, 64px);
+}
+.footer-navigation ul {
+  display: grid;
+  gap: 6px;
+}
+@media (max-width: 639px) {
+  .footer-navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+  }
+  .footer-layout .copyright { text-align: center; }
+}
+@media (min-width: 640px) {
+  .footer-layout { grid-template-columns: minmax(0, 1fr) auto; }
+  .footer-layout .copyright { grid-column: 1 / -1; }
+  .footer-navigation { justify-self: end; }
+  .footer-subscribe {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0;
+    max-width: 26rem;
+  }
+  .footer-subscribe input {
+    padding-inline-end: 28px;
+    border-radius: 999px 0 0 999px;
+  }
+  .footer-subscribe .cta-large { margin-inline-start: -12px; }
+}
 footer a[href]:hover { color: var(--color-accent); text-decoration: underline; text-underline-offset: 4px; }
 footer :focus-visible { outline-color: var(--color-text); }
 .cookie-bar a:hover { color: var(--color-ink); }
