@@ -23,11 +23,11 @@
     </div>
    </div>
   </div>
-  <div class="contact-form-column">
+  <div class="contact-form-column" id="inquiry-form" tabindex="-1">
    <h2>Start a conversation.</h2>
    <p class="contact-form-intro">Tell us what you have in mind. An early idea is a good place to start.</p>
    <!-- delivery-note -->
-   <form data-inquiry-form novalidate>
+   <form data-inquiry-form novalidate <!-- inquiry-endpoint -->>
     <fieldset class="inquiry-section"><legend>How can we help?</legend><div class="inquiry-options">
      <label><input type="radio" name="inquiryType" value="project" checked/><span>New project</span></label>
      <label><input type="radio" name="inquiryType" value="consulting"/><span>Consulting</span></label>
@@ -54,11 +54,11 @@
      <div class="inquiry-field inquiry-wide"><label for="inquiry-website">Portfolio or website <span>(optional)</span></label><input id="inquiry-website" name="website" type="url" maxlength="500" placeholder="https://"/><span class="inquiry-error" id="error-website"></span></div>
     </div></fieldset>
     <fieldset class="inquiry-section"><legend id="inquiry-message-title">What are you planning?</legend><p class="inquiry-hint" id="inquiry-message-hint">Tell us about the place, the people it serves and what you hope to make possible.</p><div class="inquiry-field"><label class="inquiry-message-label" for="inquiry-message">Your message *</label><textarea id="inquiry-message" name="message" rows="6" required minlength="20" maxlength="5000" aria-describedby="inquiry-message-hint error-message"></textarea><span class="inquiry-error" id="error-message"></span></div></fieldset>
-    <div class="inquiry-trap" aria-hidden="true"><label for="inquiry-fax">Leave this field blank</label><input id="inquiry-fax" name="fax" tabindex="-1" autocomplete="off"/></div>
-    <label class="inquiry-consent"><input name="consent" type="checkbox" required/><span>I have read the <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and agree that FREN may contact me about this inquiry. *</span></label><span class="inquiry-error" id="error-consent"></span>
+    <div class="inquiry-trap" aria-hidden="true"><label for="inquiry-trap">Leave this field blank</label><input id="inquiry-trap" name="_gotcha" tabindex="-1" autocomplete="off"/></div>
+    <label class="inquiry-consent"><input name="consent" type="checkbox" required/><span>I have read the <a href="/privacy-policy" target="_blank" rel="noopener">Privacy policy</a> and agree that FREN may contact me about this inquiry. *</span></label><span class="inquiry-error" id="error-consent"></span>
     <div class="inquiry-submit"><button type="submit" class="cta-large cta-primary filled-white" disabled><!-- submit-label --></button></div>
     <div class="inquiry-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
-    <noscript><p>Please enable JavaScript to use this form, or <a href="{{studio-email-url}}" target="_blank" rel="noopener noreferrer">open an email draft</a>.</p></noscript>
+    <noscript><p>Please enable JavaScript to use this form, or <a href="mailto:{{studio-email}}">email the studio directly</a>.</p></noscript>
    </form>
   </div>
  </div>

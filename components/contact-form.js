@@ -1,4 +1,4 @@
-import { emailDraftUrl, studioEmail } from "../lib/inquiry";
+import { studioEmail } from "../lib/inquiry";
 
 const prompts = {
   project: ["What are you planning?", "Tell us about the place, the people it serves and what you hope to make possible."],
@@ -14,8 +14,10 @@ export function initContactForm(form, signal) {
     ['faith', "I'd like to discuss a church or gathering space."],
     ['world-outreach-church', "I'd like to learn more about the World Outreach Church project."],
   ]);
+  const message = form.elements.message;
   const startingPoint = startingPoints.get(new URLSearchParams(window.location.search).get('topic'));
-  if (startingPoint && !form.elements.message.value) form.elements.message.value = `${startingPoint}\n\n`;
+  if (startingPoint && !message.value) message.value = `${startingPoint}\n\n`;
+  const endpoint = form.dataset.inquiryEndpoint;
   const button = form.querySelector('[type="submit"]');
   const status = form.querySelector('.inquiry-status');
   const buttonLabel = button.textContent;
@@ -55,7 +57,7 @@ export function initContactForm(form, signal) {
     event.target.setCustomValidity?.('');
     setError(event.target.name);
   });
-  listen('submit', event => {
+  listen('submit', async event => {
     event.preventDefault();
     if (pending) return;
     let invalid;
@@ -71,38 +73,62 @@ export function initContactForm(form, signal) {
     }
     if (invalid) { invalid.focus(); return; }
     const data = new FormData(form);
-    const payload = Object.fromEntries(data);
-    payload.services = data.getAll('services');
-    const fieldsets = [...form.querySelectorAll('fieldset')].map(element => [element, element.disabled]);
-    if (String(payload.fax || '').trim()) {
+    if (String(data.get('_gotcha') || '').trim()) {
       showStatus(`Please email ${studioEmail} to continue your inquiry.`, 'error');
       return;
     }
+    data.set('name', String(data.get('name')).trim());
+    data.set('message', String(data.get('message')).trim());
     const labels = { project: 'New project', consulting: 'Consulting', collaboration: 'Collaboration', general: 'Something else' };
-    const lines = [
-      `Inquiry: ${labels[payload.inquiryType] || payload.inquiryType}`,
-      `Name: ${payload.name}`,
-      `Email: ${payload.email}`,
-      `Organization: ${payload.organization || 'Not specified'}`,
-    ];
-    if (payload.services?.length) lines.push(`Interests: ${payload.services.filter(Boolean).join(', ')}`);
-    if (payload.timing) lines.push(`Timing: ${payload.timing}`);
-    if (payload.budget) lines.push(`Budget: ${payload.budget}`);
-    if (payload.discipline) lines.push(`Discipline: ${payload.discipline}`);
-    if (payload.website) lines.push(`Website: ${payload.website}`);
-    lines.push('', 'Message:', payload.message, '', 'Privacy acknowledgement: accepted');
-    const compose = emailDraftUrl(`FREN website / ${labels[payload.inquiryType] || 'Inquiry'}`, lines.join('\n'));
+    const inquiryType = labels[data.get('inquiryType')];
+    const subject = `FREN website / ${inquiryType || 'Inquiry'}`;
+    const services = data.getAll('services').join(', ');
+    if (services) data.set('services', services);
+    if (!endpoint) {
+      const lines = [`Inquiry: ${inquiryType}`];
+      for (const [field, label] of [
+        ['name', 'Name'], ['email', 'Email'], ['organization', 'Organization'],
+        ['services', 'Interests'], ['timing', 'Timing'], ['budget', 'Budget'],
+        ['discipline', 'Discipline'], ['website', 'Website'],
+      ]) {
+        if (data.get(field)) lines.push(`${label}: ${data.get(field)}`);
+      }
+      lines.push('', 'Message:', data.get('message'), '', 'Privacy acknowledgement: accepted');
+      const draft = `mailto:${studioEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\r\n'))}`;
+      showStatus('Review and send the draft from your email app. Your answers are still here.', 'info');
+      window.location.assign(draft);
+      return;
+    }
+
+    data.set('subject', subject);
+    data.set('inquiryType', inquiryType || 'Inquiry');
+    const fieldsets = [...form.querySelectorAll('fieldset')].map(element => [element, element.disabled]);
     pending = true;
     button.disabled = true;
-    button.textContent = 'Opening…';
+    button.textContent = 'Sending…';
     form.setAttribute('aria-busy', 'true');
     fieldsets.forEach(([element]) => { element.disabled = true; });
     form.elements.consent.disabled = true;
     status.hidden = true;
     try {
-      const opened = window.open(compose, '_blank', 'noopener,noreferrer');
-      if (!opened) window.location.assign(compose);
-      if (!signal.aborted) showStatus(`An email draft opened for ${studioEmail}. Send that message to reach FREN. Your answers are still on this page.`, 'success');
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+        signal: AbortSignal.any([signal, AbortSignal.timeout(15000)]),
+      });
+      if (signal.aborted) return;
+      if (response.status === 429) {
+        showStatus('Too many attempts. Wait a minute and try again. Your answers are still here.', 'error');
+        return;
+      }
+      if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {
+        throw new Error('Inquiry was not accepted');
+      }
+      form.reset();
+      showStatus('Thanks. Your inquiry was submitted.', 'success');
+    } catch {
+      if (!signal.aborted) showStatus('We couldn’t confirm your submission. Your answers are still here. You can also email the studio directly.', 'error');
     } finally {
       pending = false;
       fieldsets.forEach(([element, disabled]) => { element.disabled = disabled; });

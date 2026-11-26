@@ -46,13 +46,12 @@
 .focus-block .focus-gallery[data-navigation-direction] { cursor: none; }
 .focus-block .focus-gallery:not(.swiper-initialized) .swiper-wrapper { gap: 16px; }
 .focus-gallery .focus-card {
-  --focus-card-height: clamp(20rem, 32vw, 28rem);
   position: relative;
   display: flex;
   align-self: flex-start;
-  width: min(96%, calc(var(--focus-card-height) * var(--focus-ratio)));
+  width: min(100%, clamp(28rem, 42vw, 37.333rem));
   height: auto;
-  aspect-ratio: var(--focus-ratio);
+  aspect-ratio: var(--fren-card-ratio);
   overflow: clip;
   background: #000;
 }
@@ -71,11 +70,12 @@
 }
 .home-page .focus-civic-media {
   --civic-scale: 1.16;
-  --civic-offset: 46px;
+  --civic-offset: 54px;
   --civic-top-slice: .18;
   --civic-join: clamp(5px, 1vw, 9px);
   position: absolute;
-  inset: 0 2% 0 -2%;
+  inset: 0 auto 0 -5%;
+  width: calc(100% * (1485 / 1059) / (var(--fren-card-ratio)));
 }
 .home-page .focus-civic-media > .focus-civic-top {
   /* Extend the scenery above the faces to meet the enlarged photo. */
@@ -96,71 +96,48 @@
 }
 @media (max-width: 359px) {
   .home-page .focus-civic-media {
-    --civic-scale: 1.06;
-    --civic-offset: 49.5px;
+    --civic-scale: 1;
+    --civic-offset: calc(106px - 21.4%);
   }
 }
-@media (min-width: 640px) and (max-width: 1369px) {
-  .home-page .focus-civic-media { --civic-offset: clamp(46px, 99px - 3.8vw, 64px); }
+@media (min-width: 640px) {
+  .home-page .focus-civic-media { --civic-offset: 92px; }
 }
 @media (min-width: 1370px) {
-  .home-page .focus-civic-media { --civic-offset: 27px; }
+  .home-page .focus-civic-media { --civic-offset: 82px; }
 }
 .home-page .focus-copy {
-  --focus-copy-inset: clamp(16px, 1.75vw, 28px);
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
   min-width: 0;
-  padding: var(--focus-copy-inset);
+  padding: clamp(16px, 1.75vw, 28px);
   color: #fff;
 }
-.home-page .focus-card--landscape .focus-copy > :is(.focus-values, p) {
-  max-width: calc(var(--focus-card-height) * var(--focus-portrait-ratio) - 2 * var(--focus-copy-inset));
+.home-page .focus-copy > :is(.capability-tags, p) {
+  max-width: 20rem;
 }
 .home-page .focus-copy h3 { font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.15; text-wrap: wrap; }
 .home-page .focus-copy p { margin-top: auto; line-height: 1.45; text-wrap: pretty; }
-.home-page .focus-values {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  list-style: none;
-  font-size: .75rem;
-  line-height: 1.25;
-}
-.home-page .focus-values li {
-  padding: 4px 8px;
-  border-radius: 999px;
+.home-page .focus-copy .capability-tags > li {
   background: #fff;
   color: #000;
 }
 @media (max-width: 639px) {
-  .home-page .focus-card--landscape .focus-copy {
+  .focus-gallery .focus-card { width: min(100%, 28rem); }
+  .home-page .focus-copy {
     gap: 6px;
     padding: 10px 12px;
   }
-  .home-page .focus-card--landscape h3 { font-size: var(--fren-title); }
-  .home-page .focus-card--landscape p { font-size: var(--fren-label); line-height: 1.35; }
-  .home-page .focus-card--landscape .focus-values { gap: 4px; font-size: .6875rem; }
-  .home-page .focus-card--landscape .focus-values li { padding: 2px 4px; }
+  .home-page .focus-copy h3 { font-size: var(--fren-title); }
+  .home-page .focus-copy p { font-size: var(--fren-label); line-height: 1.35; }
 }
 @media (max-width: 359px) {
-  .focus-gallery .focus-card--landscape { width: 100%; }
-  .home-page .focus-card--landscape .focus-copy { gap: 4px; padding-block: 8px; }
+  .home-page .focus-copy { gap: 4px; padding-block: 8px; }
+  .home-page .focus-copy p { line-height: 1.3; }
 }
-.home-page .project-start-panel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  padding: clamp(24px, 4vw, 48px);
-  background: var(--color-surface);
-}
-.home-page .project-start-copy p { max-width: 48ch; margin-top: 24px; color: var(--color-text-secondary); line-height: 1.6; text-wrap: pretty; }
-.home-page .project-start-panel .cta-small { display: inline-flex; align-items: center; min-height: 44px; }
 .home-page .partner-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .home-page .partner-grid > li { min-width: 0; aspect-ratio: 1; }
 @media (min-width: 640px) {

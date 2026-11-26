@@ -16,6 +16,7 @@
 .contact-form-column > h2 { font-size: var(--fren-title); line-height: var(--fren-heading-leading); letter-spacing: normal; font-weight: var(--weight-medium); }
 .contact-form-intro { color: var(--color-text-secondary); font-size: var(--fren-body); line-height: 1.6; max-width: 48ch; margin-top: 16px; }
 .contact-delivery-note { margin-top: 20px; padding: 16px; border: 1px solid var(--color-divider); border-radius: 12px; font-size: var(--fren-label); line-height: 1.5; color: var(--color-text-secondary); }
+.contact-delivery-note a { text-decoration: underline; overflow-wrap: anywhere; }
 .inquiry-section { min-width: 0; margin: 36px 0 0; padding: 28px 0 0; border: 0; border-top: 1px solid var(--color-divider); }
 .inquiry-section legend { float: left; width: 100%; padding: 0; margin-bottom: 16px; font-size: var(--fren-title); font-weight: var(--weight-medium); line-height: 1.3; }
 .inquiry-section > :not(legend) { clear: both; }

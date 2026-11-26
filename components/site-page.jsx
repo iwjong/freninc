@@ -55,7 +55,7 @@ export default function SitePage({ html }) {
       });
       element.tabIndex = 0;
       element.setAttribute("role", "region");
-      element.setAttribute("aria-label", hero ? "Featured work" : purpose ? "Our Purpose" : cardGallery ? element.getAttribute("aria-label") : `${element.closest(".project-item").querySelector(".brand").textContent} gallery`);
+      element.setAttribute("aria-label", hero ? "Featured work" : purpose ? "Our purpose" : cardGallery ? element.getAttribute("aria-label") : `${element.closest(".project-item").querySelector(".brand").textContent} gallery`);
       listen(element, "click", (event) => {
         if (!swiper.allowClick) return;
         const button = event.target.closest(".nav-button");
@@ -115,7 +115,7 @@ export default function SitePage({ html }) {
       menuButton.setAttribute("aria-expanded", "false");
       main.inert = footer.inert = cookie.inert = false;
       document.body.style.overflow = "";
-      menuButton.focus();
+      menuButton.focus({ preventScroll: true });
     };
     const openMenu = () => {
       main.inert = footer.inert = cookie.inert = true;
@@ -142,20 +142,6 @@ export default function SitePage({ html }) {
 
     const inquiryForm = page.querySelector('[data-inquiry-form]');
     if (inquiryForm) initContactForm(inquiryForm, controller.signal);
-    page.querySelectorAll("form:not([data-inquiry-form])").forEach((form) => {
-      listen(form, "submit", (event) => {
-        event.preventDefault();
-        if (!form.reportValidity()) return;
-        let message = form.querySelector(".reference-form-status");
-        if (!message) {
-          message = document.createElement("p");
-          message.className = "reference-form-status";
-          message.setAttribute("role", "status");
-          form.append(message);
-        }
-        message.textContent = "Preview complete. Your email has not been subscribed.";
-      });
-    });
 
     const cursor = document.createElement("div");
     cursor.className = "reference-arrow-cursor";

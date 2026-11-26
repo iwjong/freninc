@@ -5,7 +5,7 @@ import { renderHome } from "../lib/render-home";
 import "./home.css";
 
 export const metadata = {
-  title: "FREN Inc. | Spaces for Care and Play",
+  title: "FREN Inc. | Spaces for care and play",
   description: "Experience design, immersive environments and creative technology for museums, healthcare, education and public spaces. Based in Richmond Hill, Georgia.",
 };
 

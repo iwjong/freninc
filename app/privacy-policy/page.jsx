@@ -2,7 +2,7 @@ import SitePage from "../../components/site-page";
 import { readPage } from "../../lib/read-page";
 
 export const metadata = {
-  title: "Privacy Policy | FREN Inc.",
+  title: "Privacy policy | FREN Inc.",
   description: "How FREN handles website information, project inquiries and privacy requests.",
 };
 

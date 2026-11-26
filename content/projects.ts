@@ -43,7 +43,7 @@ export const projects: Project[] = [
   },
   {
     id: "uva-experience-design",
-    title: "Storytelling for Pediatric Care",
+    title: "Storytelling for pediatric care",
     theme: "Nature-inspired",
     summary: "Quiet Wonder is a storytelling-led healing environment for UVA Health Children’s that uses narrative, rather than spectacle, to bring calm to children in care. Nature-inspired scenes, original characters, and gentle color carry one voice across patient rooms, an installed Emergency Department mural, a picture book, and a custom AR app, turning clinical spaces into places that feel safe and settled.",
     client: "UVA Children's",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
   },
   {
     id: "ash-observation-unit",
-    title: "Senior Observation Unit",
+    title: "Senior observation unit",
     theme: "Above the Bay",
     summary: "Above the Bay is an experience design for the senior observation unit at Ascension Sacred Heart Pensacola that maps local landmarks onto the hospital floor plan. Naval Air Station, Pensacola Bay, Pensacola Beach, Little Sabine Bay, and Fort Pickens each define a zone, brought to life through murals, animated aircraft, and daylight-inspired lighting that help older patients feel oriented, calm, and closer to home.",
     client: "Ascension Sacred Heart Pensacola",
@@ -63,7 +63,7 @@ export const projects: Project[] = [
   },
   {
     id: "uva-wayfinding",
-    title: "Experience Design System for Pediatrics",
+    title: "Experience design system for pediatrics",
     theme: "Nature-inspired",
     summary: "UVA Children's Experience Design System transformed the seventh floor of the Battle Building into a cohesive, child-centered environment, growing from a wayfinding challenge into a complete patient and family experience. River, plains, forest, and mountain zones, drawn from an American landscape narrative, unify signage, graphics, storytelling, and immersive media into one system that guides movement, supports waiting and recovery, and scales to future phases.",
     client: "UVA Health Children's",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
   },
   {
     id: "sfch-oncology",
-    title: "Shore to Twilight: Hematology & Oncology Unit",
+    title: "Shore to twilight: Hematology & oncology unit",
     theme: "Ocean depths",
     summary: "An ocean adventure that turns long hospital stays into a journey of discovery for children in hematology and oncology care. Guided by a small submarine, kids travel from the sunlit shore at the playroom, through the open ocean of the patient rooms, down to the twilight zone of the movie room, scanning the walls with a tablet or phone to bring sea creatures to life and unlock new content every day.",
     client: "Studer Family Children's Hospital",
@@ -83,8 +83,8 @@ export const projects: Project[] = [
   },
   {
     id: "hca-healing-garden",
-    title: "Nature, Indoors and Out: HCA Healing Garden",
-    theme: "Savannah Landscape",
+    title: "Nature, indoors and out: HCA healing garden",
+    theme: "Savannah landscape",
     summary: "A healing garden that brings nature to children, families, and staff both outdoors and in. Outside, greenery, water, and playful structures inspired by Savannah's landscape create space for quiet rest and active play, while inside, a large corridor screen extends the garden as an interactive fountain whose water patterns shift as people walk by.",
     client: "Memorial Health Dwaine & Cynthia Willett Children's Hospital of Savannah, HCA Healthcare",
     service: "Experience design, outdoor play space, interactive media",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
   },
   {
     id: "sfch-picu-pacu-family",
-    title: "Through the Glass: PICU & PACU",
+    title: "Through the glass: PICU & PACU",
     theme: "Aquarium",
     summary: "An aquarium-inspired healing environment that brings color and calm to children and families during intensive and post-surgical care. Across the PACU, PICU, and PICU family areas, each space has its own identity within one story, while AR mural interactions and inclusive learning activities invite gentle play through sight, sound, and discovery.",
     client: "Studer Family Children's Hospital, Ascension Sacred Heart",
@@ -103,8 +103,8 @@ export const projects: Project[] = [
   },
   {
     id: "uva-therapeutic-playroom",
-    title: "Play as Care: Therapeutic Playroom",
-    theme: "Four Seasons",
+    title: "Play as care: Therapeutic playroom",
+    theme: "Four seasons",
     summary: "An interactive playroom where play becomes part of recovery, helping hospitalized children feel like kids again. The room cycles through the four seasons on its own, while three sensors respond to children's movement and change what they see and hear, turning rehabilitation into play that feels like exploring the outdoors.",
     client: "UVA Health Children's",
     service: "Experience design, interactive media, sensor-based play, rehabilitation integration",
@@ -116,8 +116,8 @@ export const projects: Project[] = [
 export const inProgress: Project[] = [
   {
     id: "fren-park",
-    title: "FREN Park: Where Play Meets Community",
-    theme: "Movement, Nature & Play",
+    title: "FREN Park: Where play meets community",
+    theme: "Movement, nature & play",
     summary: "A children's and family community park developed with the City of Pooler, where kids and families play, learn, and grow together. Climbing nets, splash pads, educational play, and interactive night lighting create an active, evolving destination for all ages, with flexible spaces for classes, camps, and celebrations that bring the community together.",
     client: "In partnership with the City of Pooler, Georgia",
     service: "Concept development, experience design, master planning, interactive environments",
@@ -126,7 +126,7 @@ export const inProgress: Project[] = [
   {
     id: "world-outreach-church",
     title: "World Outreach Church",
-    theme: "Large-scale Interactive Installations & Campus Wayfinding",
+    theme: "Large-scale interactive installations & campus wayfinding",
     summary: "A large-scale interactive installation and campus-wide wayfinding project for World Outreach Church. In development, the experience brings together immersive media, interactive exhibits and spatial storytelling to explore the person of Jesus and the history and impact of the English Bible. The visitor journey begins outdoors and continues through exhibition spaces and the café, with a cohesive wayfinding system that welcomes first-time visitors and helps them navigate the campus. Flexible content and installations are being designed to support renewed experiences, personal reflection and connections that continue beyond the visit.",
     client: "World Outreach Church",
     service: "Experience design, large-scale interactive installations, exhibition design, campus wayfinding",

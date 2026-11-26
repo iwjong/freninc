@@ -42,3 +42,9 @@ Have a space to rethink, a story to tell or an idea to explore? We welcome proje
 Richmond Hill, Georgia
 
 [Visit our website](https://freninc.com) ? [support@freninc.com](mailto:support@freninc.com)
+
+### Website inquiries
+
+To enable direct submissions on GitHub Pages, set the GitHub Actions repository variable `FREN_INQUIRY_FORM_ID` to the ID of a Formspree form with `support@freninc.com` as its verified target email. For local testing, set the same variable in `.env.local`. Rebuild after changing the ID.
+
+With an empty ID, the form opens a draft in the visitor's email app.

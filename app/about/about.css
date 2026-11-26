@@ -48,16 +48,21 @@
 .about-page .about-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 742 / 899; object-fit: cover; }
 .about-person-info { margin-top: 20px; }
 .about-person-info h3 { font-size: var(--about-title); line-height: var(--fren-heading-leading); letter-spacing: normal; }
-.about-services-gallery .swiper-slide { width: 34%; height: auto; min-height: 480px; }
-.about-services-gallery .about-service-cover { width: 42%; position: relative; overflow: clip; background: var(--about-ground); }
+.about-page :is(.about-service-cover, .about-service-card, .about-process-card) {
+  align-self: flex-start;
+  width: min(100%, clamp(28rem, 40vw, 36rem));
+  height: auto;
+  aspect-ratio: var(--fren-card-ratio);
+}
+.about-services-gallery .about-service-cover { position: relative; overflow: clip; background: var(--about-ground); }
 .about-service-cover figure { height: 100%; }
 .about-service-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75; }
 .about-service-cover figcaption { position: absolute; inset: auto 0 0; padding: 24px 32px; color: var(--color-text); font-size: var(--fren-body); line-height: 1.5; }
 .about-service-card { display: flex; flex-direction: column; min-width: 0; padding: clamp(24px, 2.5vw, 40px); background: var(--about-paper); color: var(--about-ground); }
 .about-service-card h3 { max-width: 16ch; font-size: var(--about-title); line-height: var(--fren-heading-leading); letter-spacing: normal; }
-.about-service-card .about-service-description { max-width: 45ch; margin-top: auto; padding-top: 72px; font-size: var(--fren-body); line-height: 1.5; color: var(--about-ground); }
-.about-service-card .about-tags { display: flex; flex-wrap: wrap; align-content: start; gap: 8px; margin-top: 24px; font-size: var(--fren-label); line-height: 1.25; }
-.about-page .about-tags li { border: 0; border-radius: 999px; padding: 8px 14px; background: var(--color-background); color: var(--about-paper); font-size: inherit; text-transform: none; }
+.about-service-card .about-service-description { max-width: 45ch; margin-top: auto; padding-top: 16px; font-size: var(--fren-body); line-height: 1.5; color: var(--about-ground); }
+.about-service-card .capability-tags { margin-top: 16px; }
+.about-service-card .capability-tags > li { background: var(--color-background); color: var(--about-paper); }
 .about-page .swiper[data-navigation-direction] { cursor: none; }
 .about-page .about-values-panel { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
 .about-values-panel > h2 { font-size: var(--about-heading); letter-spacing: normal; line-height: var(--fren-heading-leading); }
@@ -66,10 +71,9 @@
 .about-page .about-values-grid h3 { margin: 0 0 16px; font-size: var(--about-title); letter-spacing: normal; line-height: var(--fren-heading-leading); }
 .about-page .about-values-grid .about-value-label { margin: 0; color: var(--about-paper); font-size: var(--fren-body); line-height: 1.45; }
 .about-page .about-values-grid p { max-width: 48ch; margin-top: 12px; color: var(--about-muted); font-size: var(--fren-body); line-height: 1.6; }
-.about-process-gallery .swiper-slide { width: 38%; height: auto; min-height: 540px; }
 .about-process-card { position: relative; display: flex; overflow: clip; background: var(--about-ground); }
 .about-process-card > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
-.about-process-overlay { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 200px; width: 100%; padding: clamp(24px, 2.5vw, 40px); color: #fff; }
+.about-process-overlay { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; width: 100%; padding: clamp(16px, 2.5vw, 40px); color: #fff; }
 .about-process-overlay .about-number { font-size: var(--fren-title); font-weight: var(--weight-regular); line-height: 1; font-variant-numeric: tabular-nums; }
 .about-process-overlay h3 { max-width: 18ch; font-size: var(--about-title); line-height: var(--fren-heading-leading); letter-spacing: normal; }
 .about-process-overlay p { max-width: 35ch; margin-top: 16px; font-size: var(--fren-body); line-height: 1.5; }
@@ -82,9 +86,6 @@
   .about-hero-copy h1 { font-size: var(--about-display); font-weight: var(--weight-light); }
   .about-hero-media img { height: 520px; }
   .about-team .swiper-slide { width: calc((100% - 36px) / 2.3); }
-  .about-services-gallery .swiper-slide { width: 48%; }
-  .about-process-gallery .swiper-slide { width: 58%; }
-  .about-services-gallery .about-service-cover { width: 58%; }
 }
 @media (max-width: 639px) {
   .about-page { --about-gap: 16px; }
@@ -95,11 +96,16 @@
   .about-hero-media img { height: auto; aspect-ratio: 4 / 3; object-position: 50% 80%; }
   .about-hero-media figcaption { flex-wrap: wrap; gap: 4px 16px; }
   .about-team .swiper-slide { width: 84%; }
-  .about-services-gallery .swiper-slide, .about-services-gallery .about-service-cover { width: 88%; min-height: 440px; }
-  .about-service-cover figcaption { padding: 24px; }
+  .about-page :is(.about-service-cover, .about-service-card, .about-process-card) { width: min(100%, 28rem); }
+  .about-service-card { padding: 10px; }
+  .about-service-card h3 { max-width: none; line-height: 1.15; }
+  .about-service-card .capability-tags { margin-top: 6px; }
+  .about-service-card .about-service-description { padding-top: 6px; font-size: var(--fren-label); line-height: 1.3; }
+  .about-service-cover figcaption { padding: 16px; }
   .about-page .about-values-grid { grid-template-columns: minmax(0, 1fr); }
   .about-page .about-values-grid h3 { font-size: var(--about-title); }
   .about-page .about-values-grid .about-value-label { font-size: var(--fren-body); }
-  .about-process-gallery .swiper-slide { width: 88%; min-height: 480px; }
 }
-
+@media (max-width: 359px) {
+  .about-service-card .about-service-description { font-size: .8125rem; line-height: 1.25; }
+}
