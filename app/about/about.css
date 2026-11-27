@@ -107,5 +107,9 @@
   .about-page .about-values-grid .about-value-label { font-size: var(--fren-body); }
 }
 @media (max-width: 359px) {
-  .about-service-card .about-service-description { font-size: .8125rem; line-height: 1.25; }
+  .about-service-card { padding: 6px 8px; }
+  .about-service-card .capability-tags { margin-top: 4px; row-gap: 2px; }
+  .about-service-card .about-service-description { padding-top: 4px; font-size: .8125rem; line-height: 1.2; text-wrap: wrap; }
+  .about-process-overlay { gap: 12px; }
+  .about-process-overlay p { font-size: var(--fren-label); line-height: 1.35; }
 }
